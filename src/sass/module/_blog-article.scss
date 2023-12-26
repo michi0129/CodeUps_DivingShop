@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.blog-article__date {
+    font-family: $second-font-family;
+    font-size: rem(14);
+    line-height: 1;
+}
+
+.blog-article__title {
+    margin-top: rem(8);
+    font-size: rem(24);
+    font-weight: $medium;
+    line-height: 1;
+    padding-bottom: rem(4);
+    border-bottom: 1px solid $green;
+}
+
+.blog-article__contents {
+    margin-top: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.blog-article__text {
+    margin-top: rem(24);
+    line-height: 1.5;
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.blog-article__img:not(:first-child) {
+    margin-top: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.blog-article__lists {
+    margin-top: rem(24);
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.blog-article__list {
+    padding-left: rem(28);
+    position: relative;
+}
+
+.blog-article__list:not(:first-child) {
+    margin-top: rem(4);
+}
+
+.blog-article__list::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/starfish-green.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(18);
+    height: rem(18);
+    top: rem(3);
+    left: rem(-2);
+}

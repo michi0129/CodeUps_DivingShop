@@ -1,0 +1,56 @@
+@use "global" as *;
+
+.to-top {
+    position: fixed;
+    right: rem(14);
+    bottom: rem(12);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid $green;
+    @include mq(md) {
+        right: rem(18);
+    }
+}
+
+.to-top a {
+    position: relative;
+    display: block;
+    width: rem(48);
+    height: rem(48);
+    background-color: #fff;
+    @include mq(md) {
+        height: rem(80);
+        width: rem(80);
+    }
+}
+
+.to-top a span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(10);
+    left: rem(25);
+    width: rem(8);
+    border-top: solid 1px $green;
+    transform: rotate(125deg);
+    transform-origin: left top;
+    @include mq(md) {
+        width: rem(10);
+        top: rem(22);
+        left: rem(40);
+    }
+}
+
+.to-top a span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: rem(28);
+    border-right: solid 1px $green;
+    transform: translateY(-50%);
+    @include mq(md) {
+        height: rem(37);
+    }
+}

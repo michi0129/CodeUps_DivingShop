@@ -1,0 +1,59 @@
+@use "global" as *;
+
+.pc-navi__container {
+    @include mq(md) {
+    display: flex;
+    column-gap: min(3vw , rem(40));
+    color: $white;
+    height: inherit;
+    }
+}
+
+.pc-navi__items {
+    text-align: center;
+    position: relative;
+    height: inherit;
+}
+
+.pc-navi__title {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+}
+
+.pc-navi__title::after {
+    content: "";
+    position: absolute;
+    bottom: rem(16);
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: rem(2);
+    background:$white;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+.pc-navi__title:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.pc-navi__english-title {
+    @include mq(md) {
+        font-family: $second-font-family;
+        font-size: rem(18);
+        line-height: 1;
+    }
+}
+
+.pc-navi__japanese-title {
+    @include mq(md) {
+        font-size: rem(10);
+        line-height: 1.5;
+        margin-top: rem(4);
+        white-space: nowrap;
+    }
+}

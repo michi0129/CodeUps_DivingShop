@@ -1,0 +1,167 @@
+@use "global" as *;
+
+/*
+.button {
+    position: relative;
+    display: inline-block;
+}
+
+.button__button {
+    display: inline-block;
+    position: relative;
+    width: rem(202);
+    padding: rem(16) rem(88) rem(16) rem(36.8);
+    background-color: $green;
+    font-family: $second-font-family;
+    font-size: rem(14);
+    color: $white;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    border: 1px solid $green;
+    overflow: hidden;
+    z-index: 1;
+}
+*/
+
+.button {
+    display: inline-block;
+    position: relative;
+    width: rem(202);
+    padding: rem(16) rem(88) rem(16) rem(36.8);
+    background-color: $green;
+    font-family: $second-font-family;
+    font-size: rem(14);
+    color: $white;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    border: 1px solid $green;
+    /*overflow: hidden;*/
+    z-index: 1;
+}
+
+/*
+.button__button::after {
+    @include mq(md) {
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: -1;
+    }
+}
+
+.button__button:hover {
+    @include mq(md) {
+    color: $green;
+    }
+}
+
+.button__button:hover::after {
+    @include mq(md) {
+    transform: scale(1, 1);
+    }
+}
+
+.button__button:hover span {
+    @include mq(md) {
+    border-bottom: 1px solid $green;
+    border-right: 1px solid $green;
+    }
+}
+
+.button__button span {
+    display: inline-block;
+    position: absolute;
+    bottom: 45%;
+    width: rem(40);
+    height: rem(5);
+    border-bottom: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: translateY(-50%) skew(45deg);
+    margin-left: rem(8);
+}
+*/
+
+
+/*ボタンの影*/
+.button::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: rem(4);
+    left: rem(4);
+    width: rem(202);
+    height: rem(54);
+    border: 1px solid $green;
+    z-index: -2;
+}
+
+/* ホバー時 */
+.button::after {
+    @include mq(md) {
+    display: inline-block;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: -1;
+    }
+}
+
+.button:hover {
+    @include mq(md) {
+    color: $green;
+    }
+}
+
+.button:hover::after {
+    @include mq(md) {
+    transform: scale(1, 1);
+    }
+}
+
+.button:hover span::after {
+    @include mq(md) {
+    border-bottom: 1px solid $green;
+    border-right: 1px solid $green;
+    }
+}
+
+/* 矢印 */
+.button span::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 45%;
+    width: rem(40);
+    height: rem(5);
+    border-bottom: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: translateY(-50%) skew(45deg);
+    margin-left: rem(8);
+}
+
+/*
+.button__shadow {
+    position: absolute;
+    top: rem(4);
+    left: rem(4);
+    width: rem(202);
+    height: rem(54);
+    border: 1px solid $green;
+}
+*/

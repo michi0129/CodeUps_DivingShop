@@ -1,0 +1,188 @@
+@use "global" as *;
+
+.contact {
+    /*padding-top: rem(80);
+    padding-bottom: rem(58);
+    overflow: hidden;*/
+
+    @include mq(md) {
+        /*padding-top: rem(151);
+        padding-bottom: rem(149);*/
+        
+    }
+}
+
+/*
+.contact .inner {
+    padding-left: rem(40);
+    padding-right: rem(40);
+    @include mq(md) {
+        padding-left: rem(25);
+        padding-right: rem(25);
+    }
+    
+}
+*/
+
+.contact__inner {
+    /*margin-top: rem(80);*/
+    @include mq(md) {
+        /*max-width: rem(1080);
+        width: 100%;*/
+        position: relative;
+        /*margin-top: rem(151);*/
+    }
+
+}
+
+.contact__flex {
+    position: relative;
+    @include mq(md) {
+    display: flex;
+    max-width: rem(1080);
+    margin: auto;
+    width: 100%;
+    padding: rem(69) rem(32) rem(90) rem(51);
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+}
+
+.contact__access {
+    @include mq(md) {
+        width: 52.5%;
+        padding-right: rem(82);
+        border-right: rem(1) solid $green;
+    }
+}
+
+.contact__logo {
+    max-width: rem(600);
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    @include mq(md) {
+        max-width: unset;;
+    }
+}
+
+.contact__logo img {
+    width: rem(174);
+    height: rem(65);
+    display: inline-block;
+    @include mq(md) {
+        width: rem(200);
+        height: rem(75);   
+    }
+}
+
+.contact__logo::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(1);
+    background-color: $green;
+    margin-top: rem(1);
+    @include mq(md) {
+        margin-top: rem(2.5);   
+    }
+}
+
+.contact__address {
+    max-width: rem(600);
+    margin: rem(16) auto 0;
+    width: 100%;
+    text-align: center;
+    padding-left: rem(24);
+    padding-right: rem(24);
+    @include mq(md) {
+        display: flex; 
+        margin-top: rem(24);
+        max-width: unset;
+        padding-left: rem(0);
+        padding-right: rem(0);
+    }
+}
+
+.contact__address ul {
+    @include mq(md) {
+        width: rem(167);
+        text-align: left;
+    }
+}
+
+.contact__address li {
+    font-size: rem(16);
+    line-height: 1.5;
+} 
+
+.contact__address li:not(:first-child) {
+    margin-top: rem(4);
+} 
+
+.contact__map {
+    margin-top: rem(16);
+    aspect-ratio: 296 / 160;
+    overflow: hidden;
+    @include mq(md) {
+        aspect-ratio: 273 / 148;
+        margin-top: 0;
+        width: rem(273);
+    }
+}
+
+.contact__map iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact__contents {
+    /*width: 100vw;
+    margin: rem(40) calc(50% - 50vw);*/
+    padding-top: rem(40);
+    @include mq(md) {
+        /*display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        max-width: rem(315);*/
+        width: 100%;
+        margin: 0;
+        padding-top: rem(17);
+    }
+}
+
+.contact__contents p {
+    font-size: rem(14);
+    line-height: 1;
+    color: $green;
+    margin-top: rem(12);
+    text-align: center;
+    
+}
+
+.contact__button {
+    margin-top: rem(42);
+    /*padding-left: rem(69);
+    padding-right: rem(70);*/
+    text-align: center;
+    @include mq(md) {
+        margin-top: rem(40);
+        /*padding-left: rem(65);*/
+    }
+}
+
+.contact__illust {
+    position: absolute;
+    top: rem(-26);
+    right: calc(50% - min(45vw, rem(670)));
+    width: rem(109);
+    height: rem(50);
+    @include mq(md) {
+    top: rem(-51);
+    right: calc(50% - min(48vw, rem(670)));
+    width: rem(301);
+    height: rem(138);
+    }
+}

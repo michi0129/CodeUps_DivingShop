@@ -1,0 +1,120 @@
+@use "global" as *;
+
+.page-navi {
+    display: flex;
+    justify-content: center;
+    column-gap: rem(12);
+}
+
+.page-navi a {
+    display: flex;
+    border: 1px solid $green;
+    width: rem(38);
+    height: rem(38);
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    color: $green;
+    font-weight: $bold;
+    transition: 0.3s;
+}
+
+.page-navi a:hover {
+    background-color: $green;
+    color: $white;
+}
+
+.page-navi span.current {
+    display: flex;
+    border: 1px solid $green;
+    width: rem(38);
+    height: rem(38);
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    font-weight: $bold;
+    background-color: $green;
+    color: $white;  
+}
+
+.page-navi__prev {
+    margin-right: rem(28);
+    position: relative;
+}
+
+.page-navi__prev span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    color: $green;
+    width: rem(12);
+    height: rem(1);
+    top: 60%;
+    left: 48%;
+    transform: translate(-50%) rotate(45deg);
+    background-color: $green;
+    z-index: 2;
+}
+
+.page-navi__prev span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    color: $green;
+    width: rem(12);
+    height: rem(1);
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%) rotate(-45deg);
+    background-color: $green;
+    z-index: 2;
+}
+
+.page-navi__prev:hover span::before {
+    background-color: $white;
+}
+
+.page-navi__prev:hover span::after {
+    background-color: $white;
+}
+
+.page-navi__next {
+    margin-left: rem(28);
+    position: relative;
+}
+
+.page-navi__next span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    color: $green;
+    width: rem(12);
+    height: rem(1);
+    top: 60%;
+    left: 48%;
+    transform: translate(-50%) rotate(-45deg);
+    background-color: $green;
+    z-index: 2;
+}
+
+.page-navi__next span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    color: $green;
+    width: rem(12);
+    height: rem(1);
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%) rotate(45deg);
+    background-color: $green;
+    z-index: 2;
+}
+
+.page-navi__next:hover span::before {
+    background-color: $white;
+}
+
+.page-navi__next:hover span::after {
+    background-color: $white;
+}

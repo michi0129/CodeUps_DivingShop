@@ -1,0 +1,99 @@
+@use "global" as *;
+
+.info {
+    background-color: $lightGreen;
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq(md) {
+        padding-top: rem(97);
+        padding-bottom: rem(100);
+    }
+}
+
+.info__contents {
+    max-width: rem(600);
+    margin: rem(25.6) auto 0;
+    width: 100%;
+    @include mq(md) {
+        max-width: unset;
+        margin-top: rem(40);
+    }
+}
+
+.info__flex {
+    @include mq(md) {
+        display: flex;
+        column-gap: rem(48);
+    }
+}
+
+.info__image {
+    position: relative;
+    aspect-ratio: 345 / 227;
+    overflow: hidden;
+    @include mq(md) {
+        width: 50%;
+        aspect-ratio: 540 / 356;
+    }
+}
+
+.info__image .color {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: $green;
+}
+
+.info__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info__content {
+    padding-top: rem(28.8);
+    @include mq(md) {
+        padding-top: rem(50);
+        width: 45.555%;
+    }
+}
+
+.info__content-title {
+    font-size: rem(20);
+    font-weight: $bold;
+    line-height: 1;
+    @include mq(md) {
+        font-size: rem(24);
+    }
+}
+
+.info__content-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(1);
+    background-color: $green;
+    margin-top: rem(4);
+    @include mq(md) {
+        margin-top: rem(8);
+    }
+}
+
+.info__content-text {
+    font-size: rem(16);
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin-top: rem(8);
+}
+
+.info__button {
+    margin-top: rem(38.4);
+    text-align: center;
+
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}

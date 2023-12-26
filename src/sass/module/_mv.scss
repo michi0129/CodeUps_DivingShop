@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.mv__inner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    /*@include mq(md) {
+        height: 100vh;
+    }*/
+}
+
+/*
+.mv__images {
+    @include mq(md) {
+    aspect-ratio: 1440 / 768;
+    overflow: hidden;
+    }
+}
+*/
+
+.mv__images img {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    /*@include mq(md) {
+        width: 100vw;
+        height: 100vh;
+    }*/
+}
+
+.mv__catch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: $white;
+    text-align: center;
+    /*max-width: rem(248);*/
+    @include mq(md) {
+        /*max-width: rem(496);*/
+        top: 55%;
+    }
+
+}
+
+.mv__main-catch {
+    text-transform: uppercase;
+    font-size: rem(40);
+    line-height: 1;
+    letter-spacing: 0.54em;
+    font-family: $Lato;
+    text-indent: 0.5em;
+    @include mq(md) {
+        font-size: rem(80);
+        line-height: 1.25;
+    }
+}
+
+.mv__second-catch {
+    margin-top: rem(12);
+    font-size: rem(20);
+    font-family: $second-font-family;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    @include mq(md) {
+        margin-top: rem(8);
+    }
+}

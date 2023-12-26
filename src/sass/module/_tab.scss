@@ -1,0 +1,180 @@
+@use "global" as *;
+
+.tab_item {
+    width: calc((100% - rem(38))/3);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    background-color: $lightGreen;
+    line-height: 1.5;
+    font-size: rem(14);
+    color: $green;
+    display: block;
+    transition: all 0.2s ease;
+    text-align: center;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    float: left;
+    margin-bottom: rem(16);
+
+    @include mq(md) {
+        position: relative;
+        padding-top: rem(29);
+        padding-bottom: rem(25);
+        padding-left: rem(50);
+        line-height: 1;
+        font-size: rem(24);
+        margin-bottom: rem(24);
+    }
+}
+
+.tab_item:not(:first-of-type) {
+    margin-left: rem(19);
+}
+
+.tab_item:hover {
+    background-color: $green;
+    color: $white;
+}
+
+.tab_item br {
+    @include mq(md) {
+        display: none;
+    }
+}
+
+.tab_item-license::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-license-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(64);
+        height: rem(64);
+        top: rem(13);
+        left: rem(30);
+        transform: translateY(-10%);
+    }
+}
+
+.tab_item-fun::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-fun-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(63);
+        height: rem(63);
+        top: rem(13);
+        left: rem(18);
+        transform: translateY(-10%);
+    }
+}
+
+.tab_item-trial::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-trial-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(64);
+        height: rem(64);
+        top: rem(13);
+        left: rem(30);
+        transform: translateY(-10%);
+    }
+}
+
+.tab_item-license:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-license-white.png");
+    }
+}
+
+.tab_item-fun:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-fun-white.png");
+    }
+}
+
+.tab_item-trial:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-trial-white.png");
+    }
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+    display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+    display: none;
+    padding: rem(24);
+    clear: both;
+    overflow: hidden;
+    border: 1px solid $green;
+}
+
+.tab_content-description {
+    @include mq(md) {
+        width: calc((100% - rem(48)) / 2 );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.tab_content-title {
+    font-size: rem(24);
+    font-weight: $bold;
+    line-height: 1;
+    padding-bottom: rem(8);
+    border-bottom: 1px solid $green;
+}
+
+.tab_content-text {
+    margin-top: rem(8);
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: calc(24 / 16);
+}
+
+.tab_content-img {
+    margin-top: rem(8);
+    aspect-ratio: 297 / 189;
+    overflow: hidden;
+    @include mq(md) {
+        width: calc((100% - rem(48)) / 2 );
+        margin-top: 0;
+        aspect-ratio: 492 / 313;
+    }
+}
+
+.tab_content-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#license:checked~.tab_content-license,
+#fun:checked~.tab_content-fun,
+#trial:checked~.tab_content-trial {
+    display: block;
+    @include mq(md) {
+        display: flex;
+        column-gap: rem(48);
+    }
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab_item {
+    background-color: $green;
+    color: $white;
+}

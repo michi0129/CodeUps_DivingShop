@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.blog-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(40) 0;/*縦方向に40px、横方向に0pxの余白を指定する*/
+    
+    @include mq(md) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(80) rem(40);/*縦方向に80px、横方向に40pxの余白を指定する*/
+        
+    }
+}
+
+.blog-cards--sub {
+    @include mq(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.blog-cards__card {
+    height: auto;
+}

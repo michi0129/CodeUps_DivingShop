@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.sub-info {
+    position: relative;
+}
+
+.sub-info__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(1080);
+    }
+}
+
+.sub-info__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-95);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(47vw, rem(635)));
+    }
+}

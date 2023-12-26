@@ -1,0 +1,87 @@
+@use "global" as *;
+
+.section-title {
+    text-align: center;
+}
+
+.section-title--white {
+    @include mq(md) {
+    color: $white;
+    }
+}
+
+.section-title__english {
+    font-family: $second-font-family;
+    font-size: 2rem;
+    font-weight: $regular;
+    line-height: 1.25;
+    @include mq(md) {
+        font-size: rem(40);
+    }
+}
+
+.section-title__english--white {
+    color: $white;
+}
+
+.section-title__english::first-letter {
+    text-transform: uppercase;
+}
+
+.section-title__english--large {
+    font-size: rem(80);
+    line-height: 1;
+    @include mq(md) {
+        font-size: rem(80);
+    }
+}
+
+.section-title__english--sub {
+    font-size: rem(40); 
+    @include mq(md) {
+        font-size: rem(80);
+    }
+}
+
+/*
+.section-title__english--white {
+    @include mq(md) {
+        color: $white;
+    }
+}
+
+.section-title__english span {
+    text-transform: uppercase;
+    color: $green;
+}
+*/
+
+.section-title__japanese {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;  
+    color: $green;  
+    line-height: 1.5;
+    @include mq(md) {
+        margin-top: rem(1);
+    }
+}
+
+.section-title__japanese--small {
+    margin-top: rem(-3);
+    font-size: rem(12);
+    line-height: 1;
+}
+
+/*
+.section-title__japanese--white {
+    @include mq(md) {
+        color: $white;  
+    }
+}
+*/
+
+/*Aboutページ*/
+.section-title__english--about::first-letter {
+    text-transform: uppercase;
+    color: $green;
+}

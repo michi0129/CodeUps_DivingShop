@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.hamburger-button {
+    position: relative;
+    width: rem(32);
+    height: rem(24);
+    z-index: 1000;
+    transition: all .5s;
+    cursor: pointer;
+
+    @include mq(md) {
+        display: none;
+    }
+}
+
+.hamburger-button span {
+    transition: all .5s;
+}
+
+.hamburger-button span:first-child {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: rem(1);
+    background-color: $white;
+}
+
+.hamburger-button span:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: rem(1);
+    background-color: $white;
+}
+
+.hamburger-button span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: rem(1);
+    background-color: $white;
+}
+
+/*
+.hamburger-button.is-active span:first-child {
+    -webkit-transform: translateY(rem(10)) rotate(-315deg);
+    transform: translateY(rem(10)) rotate(-315deg);
+}
+
+.hamburger-button.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-button.is-active span:nth-child(3) {
+    -webkit-transform: translateY(rem(-10)) rotate(315deg);
+    transform: translateY(rem(-10)) rotate(315deg);
+    top: 0;
+}
+*/
+
+.hamburger-button.is-active span:first-child {
+    -webkit-transform: translateY(rem(12.8)) rotate(-325deg);
+    transform: translateY(rem(12.8)) rotate(-325deg);
+    width: 123%;
+}
+
+.hamburger-button.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-button.is-active span:nth-child(3) {
+    -webkit-transform: translateY(rem(-11.2)) rotate(325deg);
+    transform: translateY(rem(-11.2)) rotate(325deg);
+    width: 123%;
+}

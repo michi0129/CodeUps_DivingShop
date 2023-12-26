@@ -1,0 +1,88 @@
+@use "global" as *;
+.sp-nav {
+    display: block;
+    position: absolute;
+    top: rem(80);
+    left: -100%;
+    right: 0;
+    padding: 0 rem(37) rem(80);
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    cursor: pointer;
+    background-color: $green;
+    color: $white;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: all .5s;
+    overflow: auto;
+    @include mq(md) {
+        display: none;
+    }
+}
+
+/*
+.sp-nav--footer {
+    display: block;
+    position: inherit;
+    padding: 0 rem(26) rem(40) rem(37);
+    width: 100%;
+    cursor: pointer;
+    color: $white;
+    letter-spacing: 0.05em;
+    transition: all .5s;
+}
+*/
+
+.sp-nav.is-active {
+    opacity: 1;
+    left: 0;
+}
+
+.sp-navi__container {
+    display: flex;
+    column-gap: rem(29);
+    letter-spacing: normal;
+}
+
+.sp-navi__left,
+.sp-navi__right {
+    margin-top: rem(21);
+}
+
+/*
+.sp-navi__left--footer,
+.sp-navi__right--footer {
+    margin-top: 0;
+}
+*/
+
+.sp-navi__items a {
+    display: block;
+}
+
+.sp-navi__items:not(:first-child) {
+    margin-top: rem(34);
+}
+
+.sp-navi__title {
+    font-weight: $bold;
+    position: relative;
+}
+
+.sp-navi__title--line-height {
+    line-height: 1;
+}
+
+.sp-navi__title img {
+    position: absolute;
+    display: block;
+    width: rem(18);
+    height: rem(18);
+    left: rem(-22);
+    top: rem(2);
+}
+
+.sp-navi__item li {
+    margin-top: rem(18);
+}

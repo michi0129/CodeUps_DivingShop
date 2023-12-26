@@ -1,0 +1,24 @@
+@use "global" as *;
+.sub-title {
+    font-size: rem(24);
+    line-height: 1;
+    font-weight: $regular;
+    border-left: 8px solid $green;
+    padding-top: rem(9);
+    padding-bottom: rem(6);
+    padding-left: rem(74);
+    position: relative;
+}
+
+.sub-title::before {
+    content: "";
+    display: block;
+    position: absolute; /*起点の要素にrelativeを指定*/
+    background-image: url("../images/common/sub-blog-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(50);
+    height: rem(50);
+    top: rem(-7);
+    left: rem(10);
+}

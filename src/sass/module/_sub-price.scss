@@ -1,0 +1,160 @@
+@use "global" as *;
+
+.sub-price {
+    position: relative;
+}
+
+.sub-price__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(700);
+    }
+}
+
+.sub-price__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(47vw, rem(635)));
+    }
+}
+
+.sub-price__contents {
+    @include mq(md) {
+        display: flex;
+    }
+}
+
+.sub-price__contents:not(:first-child) {
+    margin-top: rem(40);
+
+    @include mq(md) {
+        margin-top: rem(80);
+    }
+}
+
+.sub-price__title {
+    font-size: rem(16);
+    font-weight: $bold;
+    line-height: 1;
+    color: $white;
+    background-color: $green;
+    padding-top: rem(8);
+    padding-bottom: rem(8);
+    text-align: center;
+
+    @include mq(md) {
+        width: 28.57%;
+        padding-top: rem(41);
+        padding-bottom: rem(113);
+    }
+}
+
+.sub-price__title span {
+    position: relative;
+    ;
+}
+
+.sub-price__title span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/info-icon-license-white.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(24);
+    height: rem(24);
+    top: 0;
+    left: rem(-32);
+
+    @include mq(md) {
+        display: none;
+    }
+}
+
+.sub-price__title span::after {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-license-white.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(64);
+        height: rem(64);
+        top: rem(30);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.sub-price__table {
+    width: 100%;
+    border: 1px solid $green;
+    border-collapse: collapse;
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: 1;
+    color: $black;
+    background-color: $white;
+
+    @include mq(md) {
+        width: 71.43%;
+        table-layout: fixed;
+    }
+}
+
+.sub-price__table th,
+.sub-price__table td {
+    border: 1px solid $green;
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: 1;
+    color: $black;
+}
+
+.sub-price__table th {
+    line-height: 1.5;
+
+    @include mq(md) {
+        text-align: left;
+        padding-left: rem(16);
+        width: rem(287);
+    }
+}
+
+.sub-price__table th br {
+    @include mq(md) {
+        display: none;
+    }
+}
+
+.sub-price__table td {
+    padding-top: rem(19);
+    padding-bottom: rem(19);
+    text-align: end;
+    padding-right: rem(6);
+
+    @include mq(md) {
+        width: rem(100);
+        padding-left: rem(47);
+        padding-right: rem(16);
+    }
+}

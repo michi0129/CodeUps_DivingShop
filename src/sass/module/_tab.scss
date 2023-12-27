@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.tab_item {
+.tab__item {
     width: calc((100% - rem(38))/3);
     padding-top: rem(10);
     padding-bottom: rem(10);
@@ -26,22 +26,22 @@
     }
 }
 
-.tab_item:not(:first-of-type) {
+.tab__item:not(:first-of-type) {
     margin-left: rem(19);
 }
 
-.tab_item:hover {
+.tab__item:hover {
     background-color: $green;
     color: $white;
 }
 
-.tab_item br {
+.tab__item br {
     @include mq(md) {
         display: none;
     }
 }
 
-.tab_item-license::before {
+.tab__item-license::before {
     @include mq(md) {
         content: "";
         display: block;
@@ -57,7 +57,7 @@
     }
 }
 
-.tab_item-fun::before {
+.tab__item-fun::before {
     @include mq(md) {
         content: "";
         display: block;
@@ -73,7 +73,7 @@
     }
 }
 
-.tab_item-trial::before {
+.tab__item-trial::before {
     @include mq(md) {
         content: "";
         display: block;
@@ -89,19 +89,19 @@
     }
 }
 
-.tab_item-license:hover::before {
+.tab__item-license:hover::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-license-white.png");
     }
 }
 
-.tab_item-fun:hover::before {
+.tab__item-fun:hover::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-fun-white.png");
     }
 }
 
-.tab_item-trial:hover::before {
+.tab__item-trial:hover::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-trial-white.png");
     }
@@ -113,7 +113,7 @@ input[name="tab_item"] {
 }
 
 /*タブ切り替えの中身のスタイル*/
-.tab_content {
+.tab__content {
     display: none;
     padding: rem(24);
     clear: both;
@@ -121,16 +121,16 @@ input[name="tab_item"] {
     border: 1px solid $green;
 }
 
-.tab_content-description {
+.tab__content-description {
     @include mq(md) {
-        width: calc((100% - rem(48)) / 2 );
+        width: calc((100% - rem(48)) / 2);
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 }
 
-.tab_content-title {
+.tab__content-title {
     font-size: rem(24);
     font-weight: $bold;
     line-height: 1;
@@ -138,35 +138,38 @@ input[name="tab_item"] {
     border-bottom: 1px solid $green;
 }
 
-.tab_content-text {
+.tab__content-text {
     margin-top: rem(8);
     font-size: rem(16);
     font-weight: $regular;
     line-height: calc(24 / 16);
 }
 
-.tab_content-img {
+.tab__content-img {
     margin-top: rem(8);
     aspect-ratio: 297 / 189;
     overflow: hidden;
+
     @include mq(md) {
-        width: calc((100% - rem(48)) / 2 );
+        width: calc((100% - rem(48)) / 2);
         margin-top: 0;
         aspect-ratio: 492 / 313;
     }
 }
 
-.tab_content-img img {
+.tab__content-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /*選択されているタブのコンテンツのみを表示*/
-#license:checked~.tab_content-license,
-#fun:checked~.tab_content-fun,
-#trial:checked~.tab_content-trial {
+#all:checked~.tab__content,
+#license:checked~.tab__content-license,
+#fun:checked~.tab__content-fun,
+#trial:checked~.tab__content-trial {
     display: block;
+
     @include mq(md) {
         display: flex;
         column-gap: rem(48);
@@ -174,7 +177,102 @@ input[name="tab_item"] {
 }
 
 /*選択されているタブのスタイルを変える*/
-.tabs input:checked+.tab_item {
+.tab input:checked+.tab__item {
     background-color: $green;
     color: $white;
+}
+
+/* Voiceページ */
+.tab__item--voice {
+    width: calc((100% - rem(21))/2);
+    padding-top: rem(6);
+    padding-bottom: rem(6);
+    box-shadow: none;
+    background-color: $white;
+    line-height: 1;
+    font-size: rem(14);
+    color: $green;
+    display: block;
+    transition: all 0.2s ease;
+    text-align: center;
+    border: 1px solid $green;
+
+    @include mq(md) {
+        width: rem(162);
+        padding-top: rem(6);
+        padding-bottom: rem(6);
+        font-size: rem(14);
+        padding-left: 0;
+        margin-bottom: rem(40);
+        /*position: relative;
+        padding-top: rem(29);
+        padding-bottom: rem(25);
+        padding-left: rem(50);
+        line-height: 1;
+        font-size: rem(24);
+        margin-bottom: rem(24);*/
+    }
+}
+
+.tab__item--voice:nth-of-type(3) {
+    clear: both;
+    margin-left: 0;
+
+    @include mq(md) {
+        clear: none;
+        margin-left: rem(32);
+    }
+}
+
+.tab__item--voice:nth-of-type(4) {
+    float: left;
+}
+
+.tab__item--voice:not(:first-of-type) {
+    @include mq(md) {
+        margin-left: rem(32);
+    }
+}
+
+.tab__item--voice:hover {
+    color: $white;
+    background-color: $green;
+}
+
+.tab__content--voice {
+    padding: 0;
+    border: none;
+    overflow: visible;
+
+    @include mq(md) {
+        width: calc((100% - rem(40)) / 2);
+        clear: none;
+        float: left;
+    }
+}
+
+.tab__content--voice:not(:first-of-type) {
+    margin-top: rem(40);
+
+    @include mq(md) {
+        margin-top: 0;
+    }
+}
+
+.tab__content--voice:nth-of-type(even) {
+    @include mq(md) {
+        margin-left: rem(40);
+    }
+}
+
+.tab__content--voice:nth-of-type(n+3):nth-of-type(-n+7) {
+    @include mq(md) {
+        margin-top: rem(80);
+    }
+}
+
+.tab__content--voice:nth-of-type(n+5):nth-of-type(-n+6) {
+    @include mq(md) {
+        margin-bottom: rem(72);
+    }
 }

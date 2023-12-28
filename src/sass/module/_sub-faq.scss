@@ -1,0 +1,102 @@
+@use "global" as *;
+
+.sub-faq {
+    position: relative;
+}
+
+.sub-faq__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(700);
+    }
+}
+
+.sub-faq__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(47vw, rem(635)));
+    }
+}
+
+.sub-faq__list:not(:first-child) {
+    margin-top: rem(40);
+}
+
+/*アコーディオン*/
+.sub-faq__title {
+    position: relative;
+    line-height: 1;
+    font-weight: $regular;
+    font-size: rem(16);
+    color: $white;
+    background-color: $green;
+    padding: rem(16) rem(6) rem(16) rem(16);
+    @include mq(md) {
+        padding: rem(25) rem(40);
+        font-size: rem(20);
+
+    }
+}
+
+.sub-faq__title::before,
+.sub-faq__title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: rem(20);
+    width: rem(28);
+    height: rem(1);
+    background-color: $white;
+    @include mq(md) {
+        width: rem(30);
+        right: rem(40);
+    }
+}
+
+.sub-faq__title::before {
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+.sub-faq__title::after {
+    transform: rotate(90deg); // 最初の矢印は下向き
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+}
+
+.sub-faq__title.is-open::before {
+    opacity: 0;
+}
+
+.sub-faq__title.is-open::after {
+    transform: rotate(0deg);
+}
+
+.sub-faq__text {
+    display: none;
+    padding: rem(24) rem(16);
+    line-height: 1.5;
+    border: 1px solid $green;
+    @include mq(md) {
+        margin-top: rem(16);
+        padding: rem(40);
+    }
+}

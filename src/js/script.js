@@ -165,12 +165,28 @@ $(window).scroll(function () {
 // Aboutページ
 // モーダル
 $(".js-gallery").modaal({
-	type: 'image',
-	overlay_close:true,//モーダル背景クリック時に閉じるか
-	before_open:function(){// モーダルが開く前に行う動作
-		$('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
-	},
-	after_close:function(){// モーダルが閉じた後に行う動作
-		$('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
-	}
+    type: 'image',
+    overlay_close: true,//モーダル背景クリック時に閉じるか
+    before_open: function () {// モーダルが開く前に行う動作
+        $('html').css('overflow-y', 'hidden');/*縦スクロールバーを出さない*/
+    },
+    after_close: function () {// モーダルが閉じた後に行う動作
+        $('html').css('overflow-y', 'scroll');/*縦スクロールバーを出す*/
+    }
+});
+
+// FAQページ
+// アコーディオン
+$(function () {
+    // タイトルをクリックすると
+    $(".js-accordion").on("click", function () {
+        // クリックしたタイトル以外のopenクラスを外す(－から＋にする)
+        // $(".js-accordion").not(this).removeClass("is-open");
+        // クリックしたタイトル以外のコンテンツを閉じる
+        // $(".js-accordion").not(this).next().slideUp(300);
+        // クリックしたタイトルにopenクラスを付け外しして＋と－を切り替える
+        $(this).toggleClass("is-open");
+        // クリックしたタイトルの次の要素(コンテンツ)を開閉
+        $(this).next().slideToggle(300);
+    });
 });

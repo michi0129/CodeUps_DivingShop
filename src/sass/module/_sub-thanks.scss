@@ -1,0 +1,59 @@
+@use "global" as *;
+
+.sub-thanks {
+    position: relative;
+}
+
+.sub-thanks__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(700);
+    }
+}
+
+.sub-thanks__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(47vw, rem(635)));
+    }
+}
+
+.sub-thanks__contents {
+    @include mq(md) {
+        
+    }
+}
+
+.sub-thanks__contents p {
+    text-align: center;
+}
+
+.sub-thanks__text {
+    margin-top: rem(40);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+.sub-thanks__none {
+    @include mq(md) {
+        display: none;
+    }
+}

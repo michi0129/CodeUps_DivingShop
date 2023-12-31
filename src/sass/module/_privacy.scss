@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.privacy {
+    position: relative;
+}
+
+.privacy__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(800);
+    }
+}
+
+.privacy__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-30);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(44vw, rem(720)));
+    }
+}
+
+.privacy__title {
+    font-size: rem(24);
+    font-weight: $medium;
+    line-height: 1;
+
+    @include mq(md) {
+        font-size: rem(32);
+    }
+}
+
+.privacy__contents {
+    margin-top: rem(40);
+    line-height: 2;
+
+    @include mq(md) {
+        letter-spacing: -0.06em;
+    }
+}
+
+.privacy__contents ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: rem(20);
+}
+
+.privacy__contents ul {
+    list-style: '・';
+    list-style-position: inside;
+}
+
+.privacy__text-box:not(:first-child) {
+    margin-top: rem(20);
+}

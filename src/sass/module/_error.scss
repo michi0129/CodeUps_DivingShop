@@ -1,0 +1,88 @@
+@use "global" as *;
+
+.error {
+    background-color: $green;
+    position: relative;
+    z-index: -1;
+}
+
+.error::after {
+    content: "";
+    display: block;
+    background-image: url("../images/common/404-bg-sp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(345);
+    height: rem(345);
+    position: absolute;
+    top: rem(105);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+
+    @include mq(md) {
+        width: rem(665);
+        height: rem(594);
+        top: rem(142);
+        left: rem(180);
+        transform: translateX(0);
+    }
+
+}
+
+.error .lower-breadcrumb {
+    margin-top: 0;
+    color: $white;
+    font-size: rem(14);
+}
+
+.error__inner {
+    padding: rem(105) rem(23.08) rem(40);
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(800);
+        padding-top: rem(98);
+        padding-bottom: rem(149);
+
+    }
+}
+
+.error__title {
+    font-size: rem(80);
+    font-weight: $regular;
+    line-height: 1;
+    margin-top: rem(52);
+    font-family: $Lato;
+    letter-spacing: 0.5em;
+    color: $white;
+    text-align: center;
+    color: $white;
+
+    @include mq(md) {
+        font-size: rem(160);
+        margin-top: rem(150);
+    }
+}
+
+.error__contents {
+    line-height: 1.5;
+    text-align: center;
+    color: $white;
+
+    @include mq(md) {
+        letter-spacing: -0.06em;
+        margin-top: rem(24);
+    }
+}
+
+.error__button {
+    margin-top: rem(40);
+
+    @include mq(md) {
+        margin-top: rem(80);
+    }
+}

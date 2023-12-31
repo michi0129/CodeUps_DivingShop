@@ -38,6 +38,7 @@
 
 .section-title__english--sub {
     font-size: rem(40); 
+    text-wrap: nowrap;
     @include mq(md) {
         font-size: rem(80);
     }

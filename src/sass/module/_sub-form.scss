@@ -1,0 +1,160 @@
+@use "global" as *;
+
+.sub-form {
+    position: relative;
+}
+
+.sub-form__inner {
+    max-width: rem(600);
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    @include mq(md) {
+        max-width: rem(700);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.sub-form__inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../images/common/sub-illust.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    left: rem(15);
+    z-index: -1;
+
+    @include mq(md) {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-80);
+        left: calc(50% - min(47vw, rem(635)));
+    }
+}
+
+.sub-form__error {
+    display: none;
+}
+
+.sub-form__error.is-active {
+    display: block;
+    color: red;
+}
+
+.sub-form__item {
+    border-bottom: 1px dashed $green;
+    padding-bottom: rem(24);
+    @include mq(md) {
+        display: flex;
+        padding-bottom: rem(40);
+    }
+}
+
+.sub-form__item:not(:first-child) {
+    margin-top: rem(24);
+}
+
+.sub-form__item dt {
+font-weight: $bold;
+line-height: 1;
+@include mq(md) {
+    width: rem(220);
+}
+}
+
+.sub-form__item dt span {
+    display: inline-block;
+font-size: rem(12);
+font-weight: $regular;
+line-height: 1;
+letter-spacing: 0.4em;
+color: $white;
+background: #C94800;
+padding: rem(5) rem(16);
+margin-left: rem(8);
+}
+
+.sub-form__item dd {
+    @include mq(md) {
+        width: calc(100% - rem(258));
+        margin-left: rem(38);
+    }
+}
+
+.sub-form__item dd input::placeholder {
+    color: #DDF0F1;
+}
+
+.sub-form__checkbox {
+    margin-top: rem(16);
+    @include mq(md) {
+        margin-top: 0;
+    }
+}
+
+.sub-form__checkbox label:not(:first-of-type) {
+    display: block;
+    margin-top: rem(4);
+}
+
+.sub-form__privacy {
+    margin-top: rem(40);
+    @include mq(md) {
+    text-align: center;
+    }
+}
+
+.sub-form__privacy dd span{
+    line-height: 1.5;
+    margin-left: rem(31);
+    margin-right: rem(31);
+    font-size: rem(14);
+}
+
+.sub-form__privacy dd span::before{
+    top: 25%;
+    @include mq(md) {
+        top: 50%;
+    }
+}
+
+.sub-form__privacy dd input:checked + span::after{
+    top: 25%;
+    @include mq(md) {
+        top: 50%;
+    }
+
+}
+
+.sub-form__button {
+    margin-top: rem(24);
+    text-align: center;
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.sub-form__button label input:hover {
+    @include mq(md) {
+        color: $green;
+    }
+}
+
+.sub-form__button label input:hover::after {
+    @include mq(md) {
+        transform: scale(1, 1);
+    }
+}
+
+.sub-form__button label input:hover + span::after {
+    @include mq(md) {
+        border-bottom: 1px solid $green;
+        border-right: 1px solid $green;
+    }
+}

@@ -210,7 +210,15 @@
 }
 
 /*Blogページ*/
+.campaign-card__image--sub {
+    aspect-ratio: 17.5 / 11.2;
+    overflow: hidden;
+    @include mq(md) {
+    }
+}
+
 .campaign-card__body--sub {
+    padding-top: rem(13);
     @include mq(md) {
         padding: rem(16);
     }

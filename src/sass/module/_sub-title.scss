@@ -4,8 +4,8 @@
     line-height: 1;
     font-weight: $regular;
     border-left: 8px solid $green;
-    padding-top: rem(9);
-    padding-bottom: rem(6);
+    padding-top: rem(16);
+    padding-bottom: rem(10);
     padding-left: rem(74);
     position: relative;
 }
@@ -19,6 +19,6 @@
     background-size: contain;
     width: rem(50);
     height: rem(50);
-    top: rem(-7);
-    left: rem(10);
+    top: rem(-0.5);
+    left: rem(15);
 }

@@ -47,7 +47,7 @@
 }
 
 .terms__contents {
-    margin-top: rem(40);
+    margin-top: rem(45);
     line-height: 2;
 
     @include mq(md) {
@@ -58,7 +58,7 @@
 .terms__contents ol {
     list-style-type: decimal;
     list-style-position: outside;
-    padding-left: rem(20);
+    padding-left: rem(23);
 }
 
 .terms__contents ul {
@@ -67,5 +67,5 @@
 }
 
 .terms__text-box:not(:first-child) {
-    margin-top: rem(20);
+    margin-top: rem(32);
 }

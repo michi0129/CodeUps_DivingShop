@@ -48,7 +48,7 @@
     font-size: rem(16);
     color: $white;
     background-color: $green;
-    padding: rem(16) rem(6) rem(16) rem(16);
+    padding: rem(18) rem(6) rem(20) rem(16);
     @include mq(md) {
         padding: rem(25) rem(40);
         font-size: rem(20);
@@ -62,7 +62,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: rem(20);
+    right: rem(16);
     width: rem(28);
     height: rem(1);
     background-color: $white;
@@ -92,8 +92,8 @@
 
 .sub-faq__text {
     display: none;
-    padding: rem(24) rem(16);
-    line-height: 1.5;
+    padding: rem(24) rem(16) rem(22) rem(16);
+    line-height: 1.45;
     border: 1px solid $green;
     @include mq(md) {
         margin-top: rem(16);

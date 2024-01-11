@@ -118,3 +118,8 @@
 .page-navi__next:hover span::after {
     background-color: $white;
 }
+
+/*ブログ詳細*/
+.page-navi--page {
+    column-gap: rem(26);
+}

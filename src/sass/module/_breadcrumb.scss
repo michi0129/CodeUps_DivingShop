@@ -3,3 +3,22 @@
 .breadcrumb {
     font-size: rem(14);
 }
+
+.breadcrumb__link:not(:first-child) {
+    position: relative;
+    margin-left: rem(20);
+}
+
+.breadcrumb__link:not(:first-child)::before {
+    content: "";
+    display: block;
+    width: rem(8);
+    height: rem(8);
+    position: absolute;
+    left: rem(-18);
+    top: 50%;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    transform: rotate(45deg) translateY(-50%);
+    color: $black;
+}

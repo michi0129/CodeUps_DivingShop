@@ -9,10 +9,15 @@ $border-cr-default: $green; //デフォルト時のボーダーの色
 $border-cr: $green; //inputのhover or focus時の色
 $back-cr: #fff;//input（テキスト系）の背景色
 
+/*追加*/
+/*エラー時*/
+$border-cr-error: #C94800; //エラー時のボーダーの色
+$back-cr-error: rgba(201, 72, 0, 0.20);//input（テキスト系）の背景色
+
 /*サイズ等の指定*/
 $fz: rem(16);//入力するときのfont-size
-$padding-und: rem(10);//paddingの指定（上下） inputの内側の余白で使う
-$padding-lnr: rem(10);//paddingの指定（左右） inputの内側の余白で使う
+$padding-und: rem(7);//paddingの指定（上下） inputの内側の余白で使う
+$padding-lnr: rem(16);//paddingの指定（左右） inputの内側の余白で使う
 $border-r: rem(6);//border-radius（テキスト系）
 
 /*ボタン系の指定*/
@@ -35,11 +40,11 @@ $radio-space-betweenRadio: rem(35);//ラジオボタンの間の距離
 
 /*チェックボックスの指定*/
 $check-fz: rem(16);//フォントサイズ
-$check-size: rem(14);//外枠の幅高さ
+$check-size: rem(22);//外枠の幅高さ
 $check-bg-cr: #fff;//外枠の背景色
 $check-border-cr: $green;//外枠の色
 $check-bg-cr-inner: #f00;//チェックマークの背景色
-$check-space: rem(10);//チェックマークと文字の距離
+$check-space: rem(8);//チェックマークと文字の距離
 $check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
 $check-weight: 2px;//チェックマークの線の太さ(px)
 
@@ -80,6 +85,9 @@ textarea {
 		border: 1px solid $border-cr;
 	}
 }
+
+
+
 [type="tel"] {
   width: 100%;
 }
@@ -105,54 +113,54 @@ button,
   	line-height: 1;*/
 }
 
-[type="radio"] {
-	display: none;
+// [type="radio"] {
+// 	display: none;
 
-	+ span {
-		display: inline-block;
-		position: relative;
-		padding: 0 0 0 calc($radio-size + $radio-space);
-		margin: 0 $radio-space-betweenRadio 0 0;
-		font-size: $radio-fz;
-		line-height: 1;
-		cursor: pointer;
+// 	+ span {
+// 		display: inline-block;
+// 		position: relative;
+// 		padding: 0 0 0 calc($radio-size + $radio-space);
+// 		margin: 0 $radio-space-betweenRadio 0 0;
+// 		font-size: $radio-fz;
+// 		line-height: 1;
+// 		cursor: pointer;
 
-		&::before {
-			position: absolute;
-			content: "";
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-			background: $radio-bg-cr;
-			border: 1px solid $radio-border-cr;
-			border-radius: 50%;
-			width: $radio-size;
-			height: $radio-size;
-			display: block;
-		}
+// 		&::before {
+// 			position: absolute;
+// 			content: "";
+// 			top: 50%;
+// 			left: 0;
+// 			transform: translateY(-50%);
+// 			background: $radio-bg-cr;
+// 			border: 1px solid $radio-border-cr;
+// 			border-radius: 50%;
+// 			width: $radio-size;
+// 			height: $radio-size;
+// 			display: block;
+// 		}
 
-		&::after {
-			opacity: 0;
-			transition: 0.3s ease;
-		}
-	}
+// 		&::after {
+// 			opacity: 0;
+// 			transition: 0.3s ease;
+// 		}
+// 	}
 
-	&:checked + span {
-		&::after {
-			position: absolute;
-			content: "";
-			top: 50%;
-			left: calc(($radio-size - $radio-size-inner) / 2);
-			transform: translateY(-50%);
-			background: $radio-bg-cr-inner;
-			border-radius: 50%;
-			width: $radio-size-inner;
-			height: $radio-size-inner;
-			display: block;
-			opacity: 1;
-		}
-	}
-}
+// 	&:checked + span {
+// 		&::after {
+// 			position: absolute;
+// 			content: "";
+// 			top: 50%;
+// 			left: calc(($radio-size - $radio-size-inner) / 2);
+// 			transform: translateY(-50%);
+// 			background: $radio-bg-cr-inner;
+// 			border-radius: 50%;
+// 			width: $radio-size-inner;
+// 			height: $radio-size-inner;
+// 			display: block;
+// 			opacity: 1;
+// 		}
+// 	}
+// }
 
 [type="checkbox"] {
 	display: none;
@@ -216,9 +224,9 @@ select {
 	cursor: pointer;
 	width: 100%;
 	/*↓カスタム */
-  margin-top: rem(10);
-	font-size: $fz;
-	padding: $padding-und $padding-lnr;
+  margin-top: rem(23);
+	font-size: rem(12);
+	padding: rem(10) rem(7);
 	background-color: $back-cr;
   border: 1px solid $border-cr-default;
   /*border-radius: $border-r;*/
@@ -226,7 +234,7 @@ select {
 	/*appearance: auto;*/
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
 	background-image: url("../images/common/form-polygon.png");
-	background-position: right 12px center;
+	background-position: right rem(7) top rem(10);
 	background-repeat: no-repeat;
 	&:focus {
 		border: 1px solid $border-cr;
@@ -257,4 +265,25 @@ textarea {
 	height: $textarea-height;
   width: 100%;
   max-width: rem(600);
+}
+
+/*追加*/
+
+/*エラー時*/
+[type="text"].is-active,
+[type="tel"].is-active,
+[type="email"].is-active,
+textarea.is-active {
+	border: 1px solid $border-cr-error;
+	background: $back-cr-error;
+
+}
+
+/*事前テキスト*/
+input::placeholder {
+	color: #DDF0F1;
+}
+
+input.is-active::placeholder {
+	color: #fff;
 }

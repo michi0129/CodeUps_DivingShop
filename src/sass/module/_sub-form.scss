@@ -47,10 +47,12 @@
     color: #C94800;
     font-size: rem(14);
     text-indent: -1em;
-    width: rem(224);
+    width: rem(240);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: rem(40);
+    margin-bottom: rem(38);
+    letter-spacing: 0.01em;
+    padding-left: 1.5em;
     @include mq(md) {
         width: 100%;
         text-align: center;
@@ -67,7 +69,7 @@
 }
 
 .sub-form__item:not(:first-child) {
-    margin-top: rem(24);
+    margin-top: rem(23);
 }
 
 .sub-form__item dt {
@@ -86,7 +88,7 @@ line-height: 1;
 letter-spacing: 0.4em;
 color: $white;
 background: #C94800;
-padding: rem(5) rem(16);
+padding: rem(5) rem(10) rem(5) rem(16);
 margin-left: rem(8);
 }
 
@@ -97,9 +99,11 @@ margin-left: rem(8);
     }
 }
 
+/*
 .sub-form__item dd input::placeholder {
     color: #DDF0F1;
 }
+*/
 
 .sub-form__checkbox {
     margin-top: rem(16);
@@ -110,11 +114,11 @@ margin-left: rem(8);
 
 .sub-form__checkbox label:not(:first-of-type) {
     display: block;
-    margin-top: rem(4);
+    margin-top: rem(3);
 }
 
 .sub-form__privacy {
-    margin-top: rem(40);
+    margin-top: rem(35);
     @include mq(md) {
     text-align: center;
     }

@@ -37,11 +37,18 @@
 }
 
 .section-title__english--sub {
-    font-size: rem(40); 
+    font-family: $Lato;
+    font-weight: $regular;
+    font-size: rem(39); 
     text-wrap: nowrap;
+    letter-spacing: 0.02em;
     @include mq(md) {
         font-size: rem(80);
     }
+}
+
+.section-title__english--sub-long {
+    letter-spacing: 0.01em;
 }
 
 /*

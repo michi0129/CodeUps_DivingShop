@@ -192,8 +192,53 @@ $(function () {
 });
 
 //Contactページ
+// $(document).ready(function () {
+//     $('.js-form').click(function (event) {
+//         event.preventDefault(); // フォームのデフォルトの送信動作を無効化
+
+//         // 必須項目の入力をチェック
+//         var name = $('.js-name').val();
+//         var email = $('.js-email').val();
+//         var tel = $('.js-tel').val();
+//         var textarea = $('.js-textarea').val();
+
+//         console.log("名前:", name); // 名前をコンソールに出力
+//         console.log("メールアドレス:", email); // メールアドレスをコンソールに出力
+//         console.log("電話番号:", tel); // 電話番号をコンソールに出力
+//         console.log("お問い合わせ内容:", textarea); // お問い合わせ内容をコンソールに出力
+
+//         if (name === '' || email === '' || tel === '' || textarea === '') {
+//             // エラーメッセージを表示
+//             //$('.js-error').text('必須項目を入力してください。');
+//         //} else {
+//             $('.sub-form__error').addClass('is-active');
+//             //$('.sub-form__error').show(); // エラーメッセージを表示する
+//             } else {
+//             //$('.sub-form__error').hide(); // エラーメッセージを非表示にする
+//             $('.sub-form__error').removeClass('is-active');
+//             // フォームを送信
+//             // ここでフォームの送信処理を記述するか、または別の処理を実行する
+//             // 例えば、この部分にAjaxを使ってフォームをサーバーに送信する処理を追加することができます
+//             // 今回はサーバーに送信する処理は記述していませんが、必要に応じて追加してください
+//             // 例： $('#myForm').submit();            
+//         };
+
+//         $('.js-form :input[required]').each(function() {
+//             if ($(this).val() === '') {
+//               $(this).addClass('is-active');
+              
+//             } else {
+//               $(this).removeClass('is-active');
+//             }
+//           });
+          
+
+//     });
+// });
+
+//Contactページ
 $(document).ready(function () {
-    $('.js-form').submit(function (event) {
+    $('.js-form').click(function (event) {
         event.preventDefault(); // フォームのデフォルトの送信動作を無効化
 
         // 必須項目の入力をチェック
@@ -207,20 +252,31 @@ $(document).ready(function () {
         console.log("電話番号:", tel); // 電話番号をコンソールに出力
         console.log("お問い合わせ内容:", textarea); // お問い合わせ内容をコンソールに出力
 
-        if (name === '' || email === '' || tel === '' || textarea === '') {
-            // エラーメッセージを表示
-            //$('.js-error').text('必須項目を入力してください。');
-        //} else {
-            $('.sub-form__error').addClass('is-active');
-            //$('.sub-form__error').show(); // エラーメッセージを表示する
+        // エラーメッセージの表示とフォーカスの設定
+        var hasError = false;
+        $('.js-form :input[required]').each(function() {
+            if ($(this).val() === '') {
+                $(this).addClass('is-active');
+                hasError = true; // エラーがある場合はフラグを立てる
             } else {
-            //$('.sub-form__error').hide(); // エラーメッセージを非表示にする
-            $('.sub-form__error').removeClass('is-active');
-            // フォームを送信
-            // ここでフォームの送信処理を記述するか、または別の処理を実行する
-            // 例えば、この部分にAjaxを使ってフォームをサーバーに送信する処理を追加することができます
-            // 今回はサーバーに送信する処理は記述していませんが、必要に応じて追加してください
-            // 例： $('#myForm').submit(); 
+                $(this).removeClass('is-active');
+            }
+        });
+
+        if (hasError) {
+            // エラーがある場合、最初のエラー項目にフォーカスを設定する
+            $('.js-form :input[required].is-active').first().focus();
+            $('.sub-form__error').addClass('is-active'); // エラーメッセージを表示
+            return false; // エラーがあるためフォームの送信をキャンセル
+        } else {
+            $('.sub-form__error').removeClass('is-active'); // エラーメッセージを非表示
         }
+
+        // エラーがない場合はフォームの送信を行う（ここに送信処理を記述）
+    });
+
+    // フォームのsubmit以外のイベント（クリックなど）でフォーカスされた場合、is-activeを削除する
+    $('.js-form :input[required]').focus(function() {
+        $(this).removeClass('is-active');
     });
 });

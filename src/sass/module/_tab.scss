@@ -13,7 +13,7 @@
     text-align: center;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
     float: left;
-    margin-bottom: rem(16);
+    margin-bottom: rem(13);
 
     @include mq(md) {
         position: relative;
@@ -185,8 +185,8 @@ input[name="tab_item"] {
 /* Voiceページ */
 .tab__item--voice {
     width: calc((100% - rem(21))/2);
-    padding-top: rem(6);
-    padding-bottom: rem(6);
+    padding-top: rem(8);
+    padding-bottom: rem(8);
     box-shadow: none;
     background-color: $white;
     line-height: 1;
@@ -196,6 +196,7 @@ input[name="tab_item"] {
     transition: all 0.2s ease;
     text-align: center;
     border: 1px solid $green;
+    margin-bottom: rem(18);
 
     @include mq(md) {
         width: rem(162);
@@ -214,9 +215,14 @@ input[name="tab_item"] {
     }
 }
 
+.tab__item--voice:not(:nth-of-type(1)) {
+    margin-left: rem(21);
+}
+
 .tab__item--voice:nth-of-type(3) {
     clear: both;
     margin-left: 0;
+    margin-bottom: rem(43);
 
     @include mq(md) {
         clear: none;
@@ -226,6 +232,7 @@ input[name="tab_item"] {
 
 .tab__item--voice:nth-of-type(4) {
     float: left;
+    margin-bottom: rem(43);
 }
 
 .tab__item--voice:not(:first-of-type) {
@@ -252,7 +259,7 @@ input[name="tab_item"] {
 }
 
 .tab__content--voice:not(:first-of-type) {
-    margin-top: rem(40);
+    margin-top: rem(38);
 
     @include mq(md) {
         margin-top: 0;

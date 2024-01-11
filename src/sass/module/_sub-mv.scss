@@ -3,15 +3,18 @@
 .sub-mv__inner {
     position: relative;
     width: 100vw;
-    height: rem(460);
+    // height: rem(460);
     @include mq(md) {
-        height: rem(540);
+        // height: rem(540);
     }
 }
 
 .sub-mv__image {
     width: 100%;
     height: 100%;
+    @include mq(md) {
+        height: rem(547);
+    }
 }
 
 .sub-mv__image img {
@@ -31,7 +34,7 @@
     /*max-width: rem(248);*/
     @include mq(md) {
         /*max-width: rem(496);*/
-        top: 55%;
+        top: 60%;
     }
 
 }

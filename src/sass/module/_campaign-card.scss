@@ -146,24 +146,6 @@
 
 /*Campaignページ*/
 
-/*
-.campaign-card__body-top {
-    @include mq(md) {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-}
-
-.campaign-card__body-bottom {
-    @include mq(md) {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-}
-*/
-
 .campaign-card__contents-description {
     display: none;
     @include mq(md) {
@@ -206,6 +188,50 @@
         display: block;
         text-align: center;
         margin-top: rem(16);
+    }
+}
+
+.campaign-card__body--campaign {
+    @include mq(md) {
+        padding: rem(23) rem(23) rem(50);
+    }
+}
+
+.campaign-card__title--campaign {
+    @include mq(md) {
+        font-size: rem(24);
+        margin-top: rem(5);
+    }
+}
+
+.campaign-card__bar--campaign {
+    @include mq(md) {
+    margin-top: rem(1);
+    }
+}
+
+.campaign-card__contents--campaign {
+    @include mq(md) {
+        padding-top: rem(27);
+    }
+}
+
+.campaign-card__contents-title--campaign {
+    @include mq(md) {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.campaign-card__contents-content--campaign {
+    @include mq(md) {
+        column-gap: rem(42);
+    }
+}
+
+.campaign-card__contents-description--campaign {
+    @include mq(md) {
+        margin-top: rem(13);
     }
 }
 

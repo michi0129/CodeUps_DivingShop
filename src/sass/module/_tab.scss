@@ -17,17 +17,22 @@
 
     @include mq(md) {
         position: relative;
-        padding-top: rem(29);
-        padding-bottom: rem(25);
-        padding-left: rem(50);
+        padding-top: rem(36);
+        padding-bottom: rem(30);
+        padding-left: rem(72);
         line-height: 1;
         font-size: rem(24);
         margin-bottom: rem(24);
+        width: calc((100% - rem(185))/3);
+
     }
 }
 
 .tab__item:not(:first-of-type) {
     margin-left: rem(19);
+    @include mq(md) {
+        margin-left: rem(92);
+    }
 }
 
 .tab__item:hover {
@@ -51,7 +56,7 @@
         background-size: contain;
         width: rem(64);
         height: rem(64);
-        top: rem(13);
+        top: rem(19);
         left: rem(30);
         transform: translateY(-10%);
     }
@@ -67,7 +72,7 @@
         background-size: contain;
         width: rem(63);
         height: rem(63);
-        top: rem(13);
+        top: rem(19);
         left: rem(18);
         transform: translateY(-10%);
     }
@@ -83,7 +88,7 @@
         background-size: contain;
         width: rem(64);
         height: rem(64);
-        top: rem(13);
+        top: rem(19);
         left: rem(30);
         transform: translateY(-10%);
     }
@@ -200,8 +205,8 @@ input[name="tab_item"] {
 
     @include mq(md) {
         width: rem(162);
-        padding-top: rem(6);
-        padding-bottom: rem(6);
+        padding-top: rem(8);
+        padding-bottom: rem(10);
         font-size: rem(14);
         padding-left: 0;
         margin-bottom: rem(40);

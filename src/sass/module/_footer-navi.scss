@@ -3,7 +3,7 @@
 .footer-navi {
     display: block;
     position: inherit;
-    padding: 0 rem(26) rem(28.8) rem(21);
+    padding: 0 rem(26) rem(35) rem(22);
     width: 100%;
     cursor: pointer;
     color: $white;
@@ -12,7 +12,7 @@
     margin-top: rem(37);
 
     @include mq(md) {
-        padding-bottom: 0;
+        padding: 0;
     }
 }
 
@@ -144,6 +144,7 @@
     width: rem(18);
     height: rem(18);
     left: rem(-22);
+    top: 20%;
 }
 
 .footer-navi__item li {

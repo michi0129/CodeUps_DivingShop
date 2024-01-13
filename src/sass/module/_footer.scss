@@ -65,13 +65,13 @@
 }
 
 .footer__navi {
-    margin-top: rem(40);
-    padding-left: rem(37);
-    padding-right: rem(26); 
+    margin-top: rem(36);
+    // padding-left: rem(37);
+    // padding-right: rem(26); 
     @include mq(md) {
         margin-top: rem(22);
-        padding-left: 0;
-        padding-right: 0;
+        // padding-left: 0;
+        // padding-right: 0;
     }
 }
 
@@ -85,7 +85,7 @@
     white-space: nowrap;
     @include mq(md) {
         font-size: rem(14);
-        margin-top: rem(55);
+        margin-top: rem(77);
         padding-left: rem(14);
         padding-right: rem(14); 
     }

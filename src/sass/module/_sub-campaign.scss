@@ -16,6 +16,12 @@
     top: rem(-23);
     left: rem(15);
     z-index: -1;
+    @include mq(md) {
+        width: rem(301);
+    height: rem(138);
+    top: rem(-70);
+    left: rem(100);
+    }
 }
 
 .sub-campaign__inner {
@@ -95,4 +101,7 @@
 
 .sub-campaign__page-navi {
     margin-top: rem(80);
+    @include mq(md) {
+        margin-top: rem(77);
+    }
 }

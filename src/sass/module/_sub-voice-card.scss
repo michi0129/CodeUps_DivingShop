@@ -25,6 +25,9 @@
 
 .sub-voice-card__text-block {
     margin-top: rem(18);
+    @include mq(md) {
+        margin-top: rem(22);
+    }
 }
 
 .sub-voice-card__age {

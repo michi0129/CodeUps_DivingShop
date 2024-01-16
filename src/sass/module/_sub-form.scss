@@ -33,8 +33,8 @@
     @include mq(md) {
         width: rem(301);
         height: rem(138);
-        top: rem(-80);
-        left: calc(50% - min(47vw, rem(635)));
+        top: rem(-72);
+        left: calc(50% - min(47vw, rem(620)));
     }
 }
 
@@ -70,13 +70,16 @@
 
 .sub-form__item:not(:first-child) {
     margin-top: rem(23);
+    @include mq(md) {
+        margin-top: rem(39);
+    }
 }
 
 .sub-form__item dt {
 font-weight: $bold;
 line-height: 1;
 @include mq(md) {
-    width: rem(220);
+    width: 30%;
 }
 }
 
@@ -94,8 +97,8 @@ margin-left: rem(8);
 
 .sub-form__item dd {
     @include mq(md) {
-        width: calc(100% - rem(258));
-        margin-left: rem(38);
+        width: 70%;
+        margin-left: rem(15);
     }
 }
 
@@ -120,6 +123,7 @@ margin-left: rem(8);
 .sub-form__privacy {
     margin-top: rem(35);
     @include mq(md) {
+    margin-top: rem(70);
     text-align: center;
     }
 }

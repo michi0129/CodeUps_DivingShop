@@ -65,7 +65,8 @@
 
     @include mq(md) {
         font-size: rem(160);
-        margin-top: rem(150);
+        margin-top: rem(135);
+        padding-left: rem(77);
     }
 }
 
@@ -76,8 +77,8 @@
     margin-top: rem(3);
 
     @include mq(md) {
-        letter-spacing: -0.06em;
-        margin-top: rem(24);
+        letter-spacing: -0.02em;
+        margin-top: rem(38);
     }
 }
 

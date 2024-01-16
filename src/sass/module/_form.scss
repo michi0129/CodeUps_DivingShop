@@ -48,6 +48,8 @@ $check-space: rem(8);//チェックマークと文字の距離
 $check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
 $check-weight: 2px;//チェックマークの線の太さ(px)
 
+$check-size-pc: rem(14);//PC外枠の幅高さ
+
 /*テキストエリアの指定*/
 $textarea-height: rem(200);
 
@@ -174,6 +176,9 @@ button,
 		line-height: 1;
 		cursor: pointer;
 		transition: 0.3s ease;
+		@include mq(md) {
+			padding: 0 0 0 calc($check-size-pc + $check-space);
+		}
 
 		&::before {
 			position: absolute;
@@ -186,6 +191,10 @@ button,
 			width: $check-size;
 			height: $check-size;
 			display: block;
+			@include mq(md) {
+				width: $check-size-pc;
+				height: $check-size-pc;
+			}
 		}
 
 		&::after {
@@ -224,11 +233,11 @@ select {
 	cursor: pointer;
 	width: 100%;
 	/*↓カスタム */
-  margin-top: rem(23);
+  	margin-top: rem(23);
 	font-size: rem(12);
 	padding: rem(10) rem(7);
 	background-color: $back-cr;
-  border: 1px solid $border-cr-default;
+ 	border: 1px solid $border-cr-default;
   /*border-radius: $border-r;*/
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	/*appearance: auto;*/
@@ -236,6 +245,10 @@ select {
 	background-image: url("../images/common/form-polygon.png");
 	background-position: right rem(7) top rem(10);
 	background-repeat: no-repeat;
+	@include mq(md) {
+		margin-top: 0;
+		padding: rem(4);
+	}
 	&:focus {
 		border: 1px solid $border-cr;
 	}
@@ -250,7 +263,7 @@ select {
 	// background-position: right 12px center;
 	// background-repeat: no-repeat;
 	&:focus {
-		border-color: 1px solid $border-cr;
+		border: 1px solid $border-cr;
 	}
 }
 

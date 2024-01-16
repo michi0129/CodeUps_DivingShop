@@ -40,29 +40,12 @@
     font-family: $Lato;
     font-weight: $regular;
     font-size: rem(39); 
-    text-wrap: nowrap;
+    /*text-wrap: nowrap;*/
     letter-spacing: 0.02em;
     @include mq(md) {
         font-size: rem(80);
     }
 }
-
-.section-title__english--sub-long {
-    letter-spacing: 0.01em;
-}
-
-/*
-.section-title__english--white {
-    @include mq(md) {
-        color: $white;
-    }
-}
-
-.section-title__english span {
-    text-transform: uppercase;
-    color: $green;
-}
-*/
 
 .section-title__japanese {
     margin-top: 0.25rem;

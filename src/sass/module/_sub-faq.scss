@@ -11,7 +11,7 @@
     position: relative;
 
     @include mq(md) {
-        max-width: rem(700);
+        max-width: rem(750);
     }
 }
 
@@ -50,7 +50,7 @@
     background-color: $green;
     padding: rem(18) rem(6) rem(20) rem(16);
     @include mq(md) {
-        padding: rem(25) rem(40);
+        padding: rem(29) rem(28) rem(29) rem(40);
         font-size: rem(20);
 
     }
@@ -97,6 +97,6 @@
     border: 1px solid $green;
     @include mq(md) {
         margin-top: rem(16);
-        padding: rem(40);
+        padding: rem(40) rem(40) rem(38);
     }
 }

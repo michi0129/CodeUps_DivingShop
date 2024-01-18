@@ -1,54 +1,56 @@
 @use "global" as *;
 @use "sass:math";
+
 // remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
 @function rem($pixels) {
-  @return math.div($pixels, 16) * 1rem;
+	@return math.div($pixels, 16) * 1rem;
 }
+
 /*デフォルト色の指定*/
 $border-cr-default: $green; //デフォルト時のボーダーの色
 $border-cr: $green; //inputのhover or focus時の色
-$back-cr: #fff;//input（テキスト系）の背景色
+$back-cr: #fff; //input（テキスト系）の背景色
 
 /*追加*/
 /*エラー時*/
 $border-cr-error: #C94800; //エラー時のボーダーの色
-$back-cr-error: rgba(201, 72, 0, 0.20);//input（テキスト系）の背景色
+$back-cr-error: rgba(201, 72, 0, 0.20); //input（テキスト系）の背景色
 
 /*サイズ等の指定*/
-$fz: rem(16);//入力するときのfont-size
-$padding-und: rem(7);//paddingの指定（上下） inputの内側の余白で使う
-$padding-lnr: rem(16);//paddingの指定（左右） inputの内側の余白で使う
-$border-r: rem(6);//border-radius（テキスト系）
+$fz: rem(16); //入力するときのfont-size
+$padding-und: rem(7); //paddingの指定（上下） inputの内側の余白で使う
+$padding-lnr: rem(16); //paddingの指定（左右） inputの内側の余白で使う
+$border-r: rem(6); //border-radius（テキスト系）
 
 /*ボタン系の指定*/
-$fz-btn: rem(14);//送信ボタンのfont-size
-$back-cr-btn: transparent linear-gradient(90deg, #7633a4 0%, #250d65 100%) 0% 0% no-repeat padding-box;//ボタンの背景色
-$font-cr-btn: white;//ボタンのフォントカラー
-$padding-und-btn: rem(20);//paddingの指定（上下） btnの内側の余白で使う
-$padding-lnr-btn: rem(72);//paddingの指定（左右） btnの内側の余白で使う
+$fz-btn: rem(14); //送信ボタンのfont-size
+$back-cr-btn: transparent linear-gradient(90deg, #7633a4 0%, #250d65 100%) 0% 0% no-repeat padding-box; //ボタンの背景色
+$font-cr-btn: white; //ボタンのフォントカラー
+$padding-und-btn: rem(20); //paddingの指定（上下） btnの内側の余白で使う
+$padding-lnr-btn: rem(72); //paddingの指定（左右） btnの内側の余白で使う
 $border-r-btn: rem(50);
 
 /*ラジオボタンの指定*/
-$radio-fz: rem(12);//フォントサイズ
-$radio-size: rem(18);//外枠の幅高さ
-$radio-bg-cr: #fff;//外枠の背景色
-$radio-border-cr: #707070;//外枠の色
-$radio-size-inner: rem(12);//チェックマーク幅高さ
-$radio-bg-cr-inner: #391E88;//チェックマークの背景色
-$radio-space: rem(10);//チェックマークと文字の距離
-$radio-space-betweenRadio: rem(35);//ラジオボタンの間の距離
+$radio-fz: rem(12); //フォントサイズ
+$radio-size: rem(18); //外枠の幅高さ
+$radio-bg-cr: #fff; //外枠の背景色
+$radio-border-cr: #707070; //外枠の色
+$radio-size-inner: rem(12); //チェックマーク幅高さ
+$radio-bg-cr-inner: #391E88; //チェックマークの背景色
+$radio-space: rem(10); //チェックマークと文字の距離
+$radio-space-betweenRadio: rem(35); //ラジオボタンの間の距離
 
 /*チェックボックスの指定*/
-$check-fz: rem(16);//フォントサイズ
-$check-size: rem(22);//外枠の幅高さ
-$check-bg-cr: #fff;//外枠の背景色
-$check-border-cr: $green;//外枠の色
-$check-bg-cr-inner: #f00;//チェックマークの背景色
-$check-space: rem(8);//チェックマークと文字の距離
-$check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
-$check-weight: 2px;//チェックマークの線の太さ(px)
+$check-fz: rem(16); //フォントサイズ
+$check-size: rem(22); //外枠の幅高さ
+$check-bg-cr: #fff; //外枠の背景色
+$check-border-cr: $green; //外枠の色
+$check-bg-cr-inner: #f00; //チェックマークの背景色
+$check-space: rem(8); //チェックマークと文字の距離
+$check-space-betweenRadio: rem(20); //ラジオボタンの間の距離
+$check-weight: 2px; //チェックマークの線の太さ(px)
 
-$check-size-pc: rem(14);//PC外枠の幅高さ
+$check-size-pc: rem(14); //PC外枠の幅高さ
 
 /*テキストエリアの指定*/
 $textarea-height: rem(200);
@@ -67,16 +69,19 @@ textarea {
 	background-image: none;
 	font-family: inherit;
 	/*↓カスタム */
-  margin-top: rem(17);
+	margin-top: rem(17);
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
 	width: 100%;
+
 	@include mq(md) {
 		margin-top: 0;
 	}
-  /*max-width: rem(300);*/
+
+	/*max-width: rem(300);*/
 	background: $back-cr;
 	border: 1px solid $border-cr-default;
+
 	/*border-radius: $border-r;*/
 	/*↓↓↓↓不要ならコメントアウト or 削除 */
 	// &:hover {  //ホバーしたときの色
@@ -91,8 +96,9 @@ textarea {
 
 
 [type="tel"] {
-  width: 100%;
+	width: 100%;
 }
+
 button,
 [type="button"],
 [type="submit"] {
@@ -176,6 +182,7 @@ button,
 		line-height: 1;
 		cursor: pointer;
 		transition: 0.3s ease;
+
 		@include mq(md) {
 			padding: 0 0 0 calc($check-size-pc + $check-space);
 		}
@@ -191,6 +198,7 @@ button,
 			width: $check-size;
 			height: $check-size;
 			display: block;
+
 			@include mq(md) {
 				width: $check-size-pc;
 				height: $check-size-pc;
@@ -233,22 +241,24 @@ select {
 	cursor: pointer;
 	width: 100%;
 	/*↓カスタム */
-  	margin-top: rem(23);
+	margin-top: rem(23);
 	font-size: rem(12);
 	padding: rem(10) rem(7);
 	background-color: $back-cr;
- 	border: 1px solid $border-cr-default;
-  /*border-radius: $border-r;*/
+	border: 1px solid $border-cr-default;
+	/*border-radius: $border-r;*/
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	/*appearance: auto;*/
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
 	background-image: url("../images/common/form-polygon.png");
 	background-position: right rem(7) top rem(10);
 	background-repeat: no-repeat;
+
 	@include mq(md) {
 		margin-top: 0;
 		padding: rem(4);
 	}
+
 	&:focus {
 		border: 1px solid $border-cr;
 	}
@@ -258,6 +268,7 @@ select {
 	position: relative;
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	appearance: auto;
+
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
 	// background-image: url();
 	// background-position: right 12px center;
@@ -276,20 +287,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 textarea {
 	height: $textarea-height;
-  width: 100%;
-  max-width: rem(600);
+	width: 100%;
+	max-width: rem(600);
 }
 
 /*追加*/
 
-/*エラー時*/
+/* テキストエリアエラー時 */
 [type="text"].is-active,
 [type="tel"].is-active,
 [type="email"].is-active,
 textarea.is-active {
 	border: 1px solid $border-cr-error;
 	background: $back-cr-error;
+}
 
+/* チェックボックスエラー時 */
+[type="checkbox"].is-active+span::before{
+	border: 1px solid $border-cr-error;
+	background: $back-cr-error;
 }
 
 /*事前テキスト*/

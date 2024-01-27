@@ -35,3 +35,211 @@
         left: calc(50% - min(47vw, rem(620)));
     }
 }
+
+/* タブ */
+.sub-info__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: rem(20);
+
+    @include mq(md) {
+        gap: rem(90);
+    }
+}
+
+.sub-info__tab {
+    // padding-top: rem(10);
+    // padding-bottom: rem(10);
+    background-color: $lightGreen;
+    line-height: 1.5;
+    font-size: rem(14);
+    color: $green;
+    display: block;
+    transition: all 0.2s ease;
+    text-align: center;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+    @include mq(md) {
+        position: relative;
+        // padding-top: rem(36);
+        // padding-bottom: rem(30);
+        // padding-left: rem(72);
+        line-height: 1;
+        font-size: rem(24);
+
+    }
+}
+
+.sub-info__tab.current {
+    background-color: $green;
+    color: $white;
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    @include mq(md) {
+    
+        padding-top: rem(36);
+        padding-bottom: rem(30);
+        padding-left: rem(72);
+    }
+}
+
+.sub-info__tab a {
+    display: block;
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    transition: 0.3s;
+    @include mq(md) {
+    
+        padding-top: rem(36);
+        padding-bottom: rem(30);
+        padding-left: rem(72);
+    }
+}
+
+.sub-info__tab:hover {
+    background-color: $green;
+    color: $white;
+}
+
+.sub-info__tab-license::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-license-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(64);
+        height: rem(64);
+        top: rem(19);
+        left: rem(30);
+        transform: translateY(-10%);
+        transition: 0.3s;
+    }
+}
+
+.sub-info__tab-fun::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-fun-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(63);
+        height: rem(63);
+        top: rem(19);
+        left: rem(18);
+        transform: translateY(-10%);
+        transition: 0.3s;
+    }
+}
+
+.sub-info__tab-trial::before {
+    @include mq(md) {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../images/common/info-icon-trial-green.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(64);
+        height: rem(64);
+        top: rem(19);
+        left: rem(30);
+        transform: translateY(-10%);
+        transition: 0.3s;
+    }
+}
+
+.sub-info__tab-license:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-license-white.png");
+    }
+}
+
+.sub-info__tab-fun:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-fun-white.png");
+    }
+}
+
+.sub-info__tab-trial:hover::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-trial-white.png");
+    }
+}
+
+.sub-info__tab-license.current::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-license-white.png");
+    }
+}
+
+
+.sub-info__tab-fun.current::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-fun-white.png");
+    }
+}
+
+.sub-info__tab-trial.current::before {
+    @include mq(md) {
+        background-image: url("../images/common/info-icon-trial-white.png");
+    }
+}
+
+/* タブコンテンツ */
+.sub-info__tab-content {
+    padding: rem(24);
+    border: 1px solid $green;
+    margin-top: rem(16);
+
+    @include mq(md) {
+        display: flex;
+        column-gap: rem(48);
+        margin-top: rem(24);
+    }
+}
+
+.sub-info__tab-content-description {
+    @include mq(md) {
+        width: calc((100% - rem(48)) / 2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.sub-info__tab-content-title {
+    font-size: rem(24);
+    font-weight: $bold;
+    line-height: 1;
+    padding-bottom: rem(8);
+    border-bottom: 1px solid $green;
+}
+
+.sub-info__tab-content-text {
+    margin-top: rem(8);
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: calc(24 / 16);
+}
+
+.sub-info__tab-content-img {
+    margin-top: rem(8);
+    aspect-ratio: 297 / 189;
+    overflow: hidden;
+
+    @include mq(md) {
+        width: calc((100% - rem(48)) / 2);
+        margin-top: 0;
+        aspect-ratio: 492 / 313;
+    }
+}
+
+.sub-info__tab-content-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

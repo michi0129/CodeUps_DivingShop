@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(16) rem(21);
+    @include mq(md) {
+        grid-template-columns: repeat(auto-fit, 162px);
+        gap: rem(32);
+    }
+}
+
+.tabs__tab {
+    height: rem(34);
+    line-height: 1;
+    border: 1px solid $green;
+    color: $green;
+    font-size: rem(14);
+    background-color: $white;
+}
+
+.tabs__tab.current{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $green;
+    color: $white;
+}
+
+.tabs__tab a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+} 
+
+.tabs__tab a:hover {
+    @include mq(md) {
+        background-color: $green;
+        color: $white;
+    }
+}

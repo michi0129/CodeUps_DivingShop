@@ -50,16 +50,16 @@
     }
 }
 
-.sub-blog__cards {
-    margin-top: rem(27.2);
-    padding-left: rem(5);
-    padding-right: rem(5);
-    @include mq(md) {
-        margin-top: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
+// .sub-blog__cards {
+//     margin-top: rem(27.2);
+//     padding-left: rem(5);
+//     padding-right: rem(5);
+//     @include mq(md) {
+//         margin-top: 0;
+//         padding-left: 0;
+//         padding-right: 0;
+//     }
+// }
 
 .sub-blog__page-navi {
     margin-top: rem(80);
@@ -137,30 +137,45 @@
 
 .sub-blog__archive-list {
     margin-top: rem(15);
-}
-
-.sub-blog__archive-list a {
     position: relative;
     display: block;
     padding-left: rem(32);
     transition: 0.3s;
+    cursor: pointer;
 }
 
-.sub-blog__archive-list a span {
+.sub-blog__archive-list span {
     position: absolute;
-    height: calc(rem(20) / 2 * tan(60deg)); /*pxは三角形の底辺の幅*/
+    height: calc(rem(25) / 2 * tan(60deg)); /*pxは三角形の底辺の幅*/
     width: rem(20); 
-    clip-path: polygon(0 0, 100% 0, 50% 100%); /*下向き*/
+    clip-path: polygon(0 0, 100% 50%, 0 100%); /*右向き*/
+    background-color: $green;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.sub-blog__archive-list.is-open span {
+    position: absolute;
+    // height: calc(rem(20) / 2 * tan(60deg)); /*pxは三角形の底辺の幅*/
+    width: rem(20); 
+    // clip-path: polygon(0 0, 100% 0, 50% 100%); /*下向き*/
     background-color: $green;
     top: rem(6);
     left: 0;
+    transform: rotate(90deg);
 }
 
-.sub-blog__archive-list--close a span {
-    clip-path: polygon(0 0, 100% 50%, 0 100%); /*右向き*/
-    left: rem(6);
-    top: rem(1);
+.sub-blog__archive-months {
+    display: none;
 }
+
+// .sub-blog__archive-list--closes a span {
+//     clip-path: polygon(0 0, 100% 50%, 0 100%); /*右向き*/
+//     left: rem(6);
+//     top: rem(1);
+// }
 
 .sub-blog__archive-list a:hover {
     opacity: 0.5;
@@ -179,7 +194,7 @@
 
 .sub-blog__archive-month a span {
     position: absolute;
-    height: calc(rem(20) / 2 * tan(60deg)); /*pxは三角形の底辺の幅*/
+    height: calc(rem(25) / 2 * tan(60deg));
     width: rem(20); 
     clip-path: polygon(0 0, 100% 50%, 0 100%); /*右向き*/    background-color: $green;
     top: rem(3);

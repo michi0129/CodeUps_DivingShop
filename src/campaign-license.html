@@ -33,8 +33,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="./assets/js/jquery.inview.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
-
 
   <script defer src="./assets/js/script.js"></script>
 </head>
@@ -51,6 +49,60 @@
         <span></span>
         <span></span>
       </div>
+
+      <!-- PCナビゲーション -->
+      <nav class="header__pc-navi pc-navi">
+        <ul class="pc-navi__container">
+          <li class="pc-navi__items">
+            <a href="./campaign.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Campaign</p>
+              <p class="pc-navi__japanese-title">キャンペーン</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./about.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">About us</p>
+              <p class="pc-navi__japanese-title">私たちについて</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./info.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Information</p>
+              <p class="pc-navi__japanese-title">ダイビング情報</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./blog.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Blog</p>
+              <p class="pc-navi__japanese-title">ブログ</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./voice.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Voice</p>
+              <p class="pc-navi__japanese-title">お客様の声</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./price.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Price</p>
+              <p class="pc-navi__japanese-title">料金一覧</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./faq.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">FAQ</p>
+              <p class="pc-navi__japanese-title">よくある質問</p>
+            </a>
+          </li>
+          <li class="pc-navi__items">
+            <a href="./contact.html" class="pc-navi__title">
+              <p class="pc-navi__english-title">Contact</p>
+              <p class="pc-navi__japanese-title">お問い合わせ</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
       <!-- SPナビゲーション -->
       <nav class="header__sp-nav sp-nav">
@@ -123,34 +175,133 @@
   </header>
 
   <main>
-
-
-
-    <!-- 404error -->
-    <section class="error lower-error">
-      <div class="error__inner inner">
-        <!-- パンくずリスト -->
-        <div class="breadcrumb lower-breadcrumb">
-          <a href="./index.html" class="breadcrumb__link">TOP</a><a href="./404error.html"
-            class="breadcrumb__link">404</a>
-
+    <!-- 下層メインビュー -->
+    <div class="sub-mv">
+      <div class="sub-mv__inner">
+        <div class="sub-mv__image">
+          <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/common/campaign-mv-sp.jpg">
+            <source media="(min-width: 768px)" srcset="./assets/images/common/campaign-mv-pc.jpg">
+            <img src="./assets/images/common/campaign-mv-pc.jpg" alt="2匹の魚の写真">
+          </picture>
         </div>
-        <h2 class="error__title">404</h2>
-        <div class="error__contents">
-          <p>申し訳ありません。<br>
-            お探しのページが見つかりません。</p>
-          <!-- ボタン -->
-          <div class="error__button">
-            <a href="./index.html" class="button button--white">
-              <span>Page TOP</span>
-            </a>
+        <!-- セクションタイトル -->
+        <div class="sub-mv__title section-title">
+          <h1 class="section-title__english section-title__english--white section-title__english--sub">campaign</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb lower-breadcrumb">
+      <div class="breadcrumb__inner inner">
+        <a href="./index.html" class="breadcrumb__link">TOP</a><a href="./campaign.html"
+          class="breadcrumb__link">キャンペーン</a>
+      </div>
+    </div>
+
+    <!-- キャンペーン -->
+    <section class="sub-campaign lower-campaign">
+      <div class="sub-campaign__inner inner">
+        <ul class="sub-campaign__tabs tabs">
+          <li class="tabs__tab"><a href="./campaign.html">ALL</a></li>
+          <li class="tabs__tab current"><span>ライセンス講習</span></li>
+          <li class="tabs__tab"><a href="./campaign-fun.html">ファンダイビング</a></li>
+          <li class="tabs__tab"><a href="./campaign-trial.html">体験ダイビング</a></li>
+        </ul>
+        <div class="sub-campaign__contents">
+          <div class="sub-campaign__cards">
+            <!-- カード1個目 -->
+            <div class="sub-campaign__card campaign-card">
+              <div class="campaign-card__image">
+                <img src="./assets/images/common/campaign1.jpg" alt="海中の画像">
+              </div>
+              <div class="campaign-card__body campaign-card__body--campaign">
+                <!-- <div class="campaign-card__body campaign-card__body--campaign-top"> -->
+                <div class="campaign-card__tag">ライセンス講習</div>
+                <h2 class="campaign-card__title campaign-card__title--campaign">ライセンス取得</h2>
+                <span class="campaign-card__bar campaign-card__bar--campaign"></span>
+                <div class="campaign-card__contents campaign-card__contents--campaign">
+                  <p class="campaign-card__contents-title campaign-card__contents-title--campaign">全部コミコミ(お一人様)</p>
+                  <div class="campaign-card__contents-content campaign-card__contents-content--campaign">
+                    <p>¥56,000<span></span></p>
+                    <p>¥46,000</p>
+                  </div>
+                </div>
+                <p class="campaign-card__contents-description campaign-card__contents-description--campaign">
+                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                </p>
+                <time class="campaign-card__contents-date" datetime="2023-06-01">2023/6/1-9/30</time>
+                <p class="campaign-card__caption">ご予約・お問い合わせはコチラ</p>
+                <div class="campaign-card__button">
+                  <a href="./contact.html" class="button">
+                    <span>contact us</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
+        <!-- ページナビ -->
+        <div class="sub-campaign__page-navi page-navi">
+          <a href="#" class="page-navi__prev"><span></span></a>
+          <span class="current">1</span>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#" class="u-mobile">5</a>
+          <a href="#" class="u-mobile">6</a>
+          <a href="#" class="page-navi__next"><span></span></a>
+        </div>
 
       </div>
+
+
     </section>
 
+    <!-- Contact -->
+    <section class="contact lower-contact">
+      <div class="contact__inner inner">
+        <div class="contact__flex contact__flex--sub">
+          <!-- アクセス -->
+          <div class="contact__access">
+            <p class="contact__logo"><img src="./assets/images/common/logo-green.svg" alt="CodeUps"></p>
+            <div class="contact__address">
+              <ul>
+                <li>沖縄県那覇市1-1</li>
+                <li>TEL:0120-000-0000</li>
+                <li>営業時間:8:30-19:00</li>
+                <li>定休日:毎週火曜日</li>
+              </ul>
+              <div class="contact__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57273.02319562232!2d127.64350225655136!3d26.210859430268528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5697141a6b58b%3A0x2cd8aff616585e98!2z5rKW57iE55yM6YKj6KaH5biC!5e0!3m2!1sja!2sjp!4v1692710541228!5m2!1sja!2sjp"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- セクションタイトル -->
+          <div class="contact__contents">
+            <div class="contact__title section-title">
+              <h2 class="section-title__english section-title__english--large">contact</h2>
+              <div class="section-title__japanese section-title__japanese--small">お問い合わせ</div>
+            </div>
+            <p>ご予約・お問い合わせはコチラ</p>
+            <!-- ボタン -->
+            <div class="contact__button">
+              <a href="./contact.html" class="button">
+                <span>View more</span>
+              </a>
+            </div>
+          </div>
+          <div class="contact__illust"><img src="./assets/images/common/fish-green2.png" alt="魚の群れのイラスト"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- 上へボタン -->

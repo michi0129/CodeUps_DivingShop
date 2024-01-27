@@ -36,6 +36,19 @@
     }
 }
 
+.sub-voice__contents {
+    margin-top: rem(40);
+    display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(40);
+    @include mq(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(80) rem(40); /*縦方向の余白 横方向の余白の順*/
+
+    }
+}
+
 .sub-voice__page-navi {
     margin-top: rem(80);
 

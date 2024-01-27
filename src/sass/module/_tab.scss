@@ -1,325 +1,344 @@
 @use "global" as *;
 
-.tab__item {
-    width: calc((100% - rem(38))/3);
-    padding-top: rem(10);
-    padding-bottom: rem(10);
-    background-color: $lightGreen;
-    line-height: 1.5;
-    font-size: rem(14);
-    color: $green;
-    display: block;
-    transition: all 0.2s ease;
-    text-align: center;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    float: left;
-    margin-bottom: rem(13);
+// .sub-info__tabs {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     gap: rem(20);
+//     @include mq(md) {
+//         gap: rem(90);
+//     }
+// }
 
-    @include mq(md) {
-        position: relative;
-        padding-top: rem(36);
-        padding-bottom: rem(30);
-        padding-left: rem(72);
-        line-height: 1;
-        font-size: rem(24);
-        margin-bottom: rem(24);
-        // width: calc((100% - rem(185))/3);
-        max-width: calc((100% - rem(180))/3);
-        min-width: calc((100% - 13vw)/3);
+// .sub-info__tab {
+//     // width: calc((100% - rem(38))/3);
+//     padding-top: rem(10);
+//     padding-bottom: rem(10);
+//     background-color: $lightGreen;
+//     line-height: 1.5;
+//     font-size: rem(14);
+//     color: $green;
+//     display: block;
+//     transition: all 0.2s ease;
+//     text-align: center;
+//     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+//     // float: left;
+//     // margin-bottom: rem(13);
 
-    }
-}
+//     @include mq(md) {
+//         position: relative;
+//         padding-top: rem(36);
+//         padding-bottom: rem(30);
+//         padding-left: rem(72);
+//         line-height: 1;
+//         font-size: rem(24);
+//         // margin-bottom: rem(24);
+//         // width: calc((100% - rem(185))/3);
+//         // max-width: calc((100% - rem(180))/3);
+//         // min-width: calc((100% - 13vw)/3);
 
-.tab__item:not(:first-of-type) {
-    margin-left: rem(19);
+//     }
+// }
 
-    @include mq(md) {
-        // margin-left: rem(92);
-        margin-left: min(6.5vw, rem(90));
-    }
-}
+// .sub-info__tab:not(:first-of-type) {
+//     margin-left: rem(19);
 
-.tab__item:hover {
-    background-color: $green;
-    color: $white;
-}
+//     @include mq(md) {
+//         // margin-left: rem(92);
+//         margin-left: min(6.5vw, rem(90));
+//     }
+// }
 
-.tab__item-license::before {
-    @include mq(md) {
-        content: "";
-        display: block;
-        position: absolute;
-        background-image: url("../images/common/info-icon-license-green.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: rem(64);
-        height: rem(64);
-        top: rem(19);
-        left: rem(30);
-        transform: translateY(-10%);
-    }
-}
+// .sub-info__tab:hover {
+//     background-color: $green;
+//     color: $white;
+// }
 
-.tab__item-fun::before {
-    @include mq(md) {
-        content: "";
-        display: block;
-        position: absolute;
-        background-image: url("../images/common/info-icon-fun-green.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: rem(63);
-        height: rem(63);
-        top: rem(19);
-        left: rem(18);
-        transform: translateY(-10%);
-    }
-}
+// .sub-info__tab-license::before {
+//     @include mq(md) {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         background-image: url("../images/common/info-icon-license-green.png");
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         width: rem(64);
+//         height: rem(64);
+//         top: rem(19);
+//         left: rem(30);
+//         transform: translateY(-10%);
+//     }
+// }
 
-.tab__item-trial::before {
-    @include mq(md) {
-        content: "";
-        display: block;
-        position: absolute;
-        background-image: url("../images/common/info-icon-trial-green.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: rem(64);
-        height: rem(64);
-        top: rem(19);
-        left: rem(30);
-        transform: translateY(-10%);
-    }
-}
+// .sub-info__tab-fun::before {
+//     @include mq(md) {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         background-image: url("../images/common/info-icon-fun-green.png");
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         width: rem(63);
+//         height: rem(63);
+//         top: rem(19);
+//         left: rem(18);
+//         transform: translateY(-10%);
+//     }
+// }
 
-.tab__item-license:hover::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-license-white.png");
-    }
-}
+// .sub-info__tab-trial::before {
+//     @include mq(md) {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         background-image: url("../images/common/info-icon-trial-green.png");
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         width: rem(64);
+//         height: rem(64);
+//         top: rem(19);
+//         left: rem(30);
+//         transform: translateY(-10%);
+//     }
+// }
 
-.tab__item-fun:hover::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-fun-white.png");
-    }
-}
+// .sub-info__tab-license:hover::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-license-white.png");
+//     }
+// }
 
-.tab__item-trial:hover::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-trial-white.png");
-    }
-}
+// .sub-info__tab-fun:hover::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-fun-white.png");
+//     }
+// }
 
-/*ラジオボタンを全て消す*/
-input[name="tab_item"] {
-    display: none;
-}
+// .sub-info__tab-trial:hover::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-trial-white.png");
+//     }
+// }
+
+// /*ラジオボタンを全て消す*/
+// input[name="tab_item"] {
+//     display: none;
+// }
 
 /*タブ切り替えの中身のスタイル*/
-.tab__content {
-    display: none;
-    padding: rem(24);
-    clear: both;
-    overflow: hidden;
-    border: 1px solid $green;
-}
+// .sub-info__tab-content {
+    
+//     padding: rem(24);
+//     border: 1px solid $green;
+//     margin-top: rem(16);
+//     @include mq(md) {
+//         display: flex;
+//         column-gap: rem(48);
+//         margin-top: rem(24);
+//     }
+// }
 
-.tab__content-description {
-    @include mq(md) {
-        width: calc((100% - rem(48)) / 2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
+// .sub-info__tab-content-description {
+//     @include mq(md) {
+//         width: calc((100% - rem(48)) / 2);
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//     }
+// }
 
-.tab__content-title {
-    font-size: rem(24);
-    font-weight: $bold;
-    line-height: 1;
-    padding-bottom: rem(8);
-    border-bottom: 1px solid $green;
-}
+// .sub-info__tab-content-title {
+//     font-size: rem(24);
+//     font-weight: $bold;
+//     line-height: 1;
+//     padding-bottom: rem(8);
+//     border-bottom: 1px solid $green;
+// }
 
-.tab__content-text {
-    margin-top: rem(8);
-    font-size: rem(16);
-    font-weight: $regular;
-    line-height: calc(24 / 16);
-}
+// .sub-info__tab-content-text {
+//     margin-top: rem(8);
+//     font-size: rem(16);
+//     font-weight: $regular;
+//     line-height: calc(24 / 16);
+// }
 
-.tab__content-img {
-    margin-top: rem(8);
-    aspect-ratio: 297 / 189;
-    overflow: hidden;
+// .sub-info__tab-content-img {
+//     margin-top: rem(8);
+//     aspect-ratio: 297 / 189;
+//     overflow: hidden;
 
-    @include mq(md) {
-        width: calc((100% - rem(48)) / 2);
-        margin-top: 0;
-        aspect-ratio: 492 / 313;
-    }
-}
+//     @include mq(md) {
+//         width: calc((100% - rem(48)) / 2);
+//         margin-top: 0;
+//         aspect-ratio: 492 / 313;
+//     }
+// }
 
-.tab__content-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+// .sub-info__tab-content-img img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
 
-/*選択されているタブのコンテンツのみを表示*/
-#all:checked~.tab__content,
-#license:checked~.tab__content-license,
-#fun:checked~.tab__content-fun,
-#trial:checked~.tab__content-trial {
-    display: block;
+// /*選択されているタブのコンテンツのみを表示*/
+// #all:checked~.sub-info__tab-content,
+// #license:checked~.sub-info__tab-content-license,
+// #fun:checked~.sub-info__tab-content-fun,
+// #trial:checked~.sub-info__tab-content-trial {
+//     display: block;
 
-    @include mq(md) {
-        display: flex;
-        column-gap: rem(48);
-    }
-}
+//     @include mq(md) {
+//         display: flex;
+//         column-gap: rem(48);
+//     }
+// }
 
-/*選択されているタブのスタイルを変える*/
-.tab input:checked+.tab__item {
-    background-color: $green;
-    color: $white;
-}
+// .sub-info__tab.current {
+//     background-color: $green;
+//     color: $white;
+// }
 
-.tab input:checked+.tab__item-license::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-license-white.png");
-    }
-}
+// .sub-info__tab-license.current::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-license-white.png");
+//     }
+// }
 
-.tab input:checked+.tab__item-fun::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-fun-white.png");
-    }
-}
 
-.tab input:checked+.tab__item-trial::before {
-    @include mq(md) {
-        background-image: url("../images/common/info-icon-trial-white.png");
-    }
-}
+// .sub-info__tab-fun.current::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-fun-white.png");
+//     }
+// }
+
+// .sub-info__tab-trial.current::before {
+//     @include mq(md) {
+//         background-image: url("../images/common/info-icon-trial-white.png");
+//     }
+// }
 
 /* Voiceページ */
-.tab__item--voice {
-    width: calc((100% - rem(21))/2);
-    padding-top: rem(8);
-    padding-bottom: rem(8);
+// .tab__item--voice {
+//     width: calc((100% - rem(21))/2);
+//     padding-top: rem(8);
+//     padding-bottom: rem(8);
     
-    background-color: $white;
-    line-height: 1;
-    font-size: rem(14);
-    color: $green;
-    display: block;
-    transition: all 0.2s ease;
-    text-align: center;
-    border: 1px solid $green;
-    margin-bottom: rem(18);
-    float: left;
+//     background-color: $white;
+//     line-height: 1;
+//     font-size: rem(14);
+//     color: $green;
+//     display: block;
+//     transition: all 0.2s ease;
+//     text-align: center;
+//     border: 1px solid $green;
+//     margin-bottom: rem(18);
+//     float: left;
 
-    @include mq(md) {
-        position: relative;
-        width: rem(162);
-        padding-top: rem(8);
-        padding-bottom: rem(10);
-        font-size: rem(14);
-        padding-left: 0;
-        margin-bottom: rem(40);
-    }
-}
+//     @include mq(md) {
+//         position: relative;
+//         width: rem(162);
+//         padding-top: rem(8);
+//         padding-bottom: rem(10);
+//         font-size: rem(14);
+//         padding-left: 0;
+//         margin-bottom: rem(40);
+//     }
+// }
 
-.tab__item--voice:not(:nth-of-type(1)) {
-    margin-left: rem(21);
-}
+// .tab__item--voice:not(:nth-of-type(1)) {
+//     margin-left: rem(21);
+// }
 
-.tab__item--voice:nth-of-type(3) {
-    clear: both;
-    margin-left: 0;
-    margin-bottom: rem(43);
+// .tab__item--voice:nth-of-type(3) {
+//     clear: both;
+//     margin-left: 0;
+//     margin-bottom: rem(43);
 
-    @include mq(md) {
-        clear: none;
-        margin-left: rem(32);
-    }
-}
+//     @include mq(md) {
+//         clear: none;
+//         margin-left: rem(32);
+//     }
+// }
 
-.tab__item--voice:nth-of-type(4) {
-    float: left;
-    margin-bottom: rem(43);
-}
+// .tab__item--voice:nth-of-type(4) {
+//     float: left;
+//     margin-bottom: rem(43);
+// }
 
-.tab__item--voice:not(:first-of-type) {
-    @include mq(md) {
-        margin-left: rem(32);
-    }
-}
+// .tab__item--voice:not(:first-of-type) {
+//     @include mq(md) {
+//         margin-left: rem(32);
+//     }
+// }
 
-.tab__item--voice:hover {
-    color: $white;
-    background-color: $green;
-}
+// .tab__item--voice:hover {
+//     color: $white;
+//     background-color: $green;
+// }
 
-.tab__content--voice {
-    padding: 0;
-    border: none;
-    overflow: visible;
+// .sub-voice__content {
+//     padding: rem(24);
+// }
 
-    @include mq(md) {
-        width: calc((100% - rem(40)) / 2);
-        clear: none;
-        float: left;
-    }
-}
+// .sub-voice__contents {
+//     margin-top: rem(40);
+//     display: grid;
+//         grid-template-columns: 1fr;
+//         gap: rem(40);
+//     @include mq(md) {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         gap: rem(80) rem(40); /*縦方向の余白 横方向の余白の順*/
 
-.tab__content--voice:not(:first-of-type) {
-    margin-top: rem(38);
+//     }
+// }
 
-    @include mq(md) {
-        margin-top: 0;
-    }
-}
 
-.tab__content--voice:nth-of-type(even) {
-    @include mq(md) {
-        margin-left: rem(40);
-    }
-}
+// .tab__content--voice:not(:first-of-type) {
+//     margin-top: rem(38);
 
-.tab__content--voice:nth-of-type(n+5):nth-of-type(-n+6) {
-    @include mq(md) {
-        margin-bottom: rem(72);
-    }
-}
+//     @include mq(md) {
+//         margin-top: 0;
+//     }
+// }
 
-/*選択されているタブのスタイルを変える*/
-.tab input:checked+.tab__item--voice {
-    background-color: $green;
-    color: $white;
-}
+// .tab__content--voice:nth-of-type(even) {
+//     @include mq(md) {
+//         margin-left: rem(40);
+//     }
+// }
 
-/*選択されているタブのスタイルを一部変更*/
-.sub-voice_tab>#all:checked~.tab__content,
-.sub-voice_tab>#license:checked~.tab__content-license,
-.sub-voice_tab>#fun:checked~.tab__content-fun,
-.sub-voice_tab>#trial:checked~.tab__content-trial {
-    display: block;
+// .tab__content--voice:nth-of-type(n+5):nth-of-type(-n+6) {
+//     @include mq(md) {
+//         margin-bottom: rem(72);
+//     }
+// }
 
-    @include mq(md) {
-        margin-bottom: rem(80);
-    }
-}
+// /*選択されているタブのスタイルを変える*/
+// .tab input:checked+.tab__item--voice {
+//     background-color: $green;
+//     color: $white;
+// }
 
-.sub-voice_tab>#fun:checked~.tab__content:nth-of-type(2) {
-    @include mq(md) {
-        margin-left: 0;
-    }
-}
+// /*選択されているタブのスタイルを一部変更*/
+// .sub-voice_tab>#all:checked~.tab__content,
+// .sub-voice_tab>#license:checked~.tab__content-license,
+// .sub-voice_tab>#fun:checked~.tab__content-fun,
+// .sub-voice_tab>#trial:checked~.tab__content-trial {
+//     display: block;
 
-.sub-voice_tab>#fun:checked~.tab__content:nth-of-type(5) {
-    @include mq(md) {
-        margin-left: rem(40);
-    }
-}
+//     @include mq(md) {
+//         margin-bottom: rem(80);
+//     }
+// }
+
+// .sub-voice_tab>#fun:checked~.tab__content:nth-of-type(2) {
+//     @include mq(md) {
+//         margin-left: 0;
+//     }
+// }
+
+// .sub-voice_tab>#fun:checked~.tab__content:nth-of-type(5) {
+//     @include mq(md) {
+//         margin-left: rem(40);
+//     }
+// }

@@ -70,7 +70,7 @@
     }
 }
 
-.sub-info__tab.current {
+.sub-info__tab.is-active {
     background-color: $green;
     color: $white;
     padding-top: rem(10);
@@ -83,7 +83,7 @@
     }
 }
 
-.sub-info__tab a {
+.sub-info__tab {
     display: block;
     padding-top: rem(10);
     padding-bottom: rem(10);
@@ -170,20 +170,20 @@
     }
 }
 
-.sub-info__tab-license.current::before {
+.sub-info__tab-license.is-active::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-license-white.png");
     }
 }
 
 
-.sub-info__tab-fun.current::before {
+.sub-info__tab-fun.is-active::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-fun-white.png");
     }
 }
 
-.sub-info__tab-trial.current::before {
+.sub-info__tab-trial.is-active::before {
     @include mq(md) {
         background-image: url("../images/common/info-icon-trial-white.png");
     }
@@ -191,9 +191,14 @@
 
 /* タブコンテンツ */
 .sub-info__tab-content {
+    display: none;
+}
+
+.sub-info__tab-content.is-active {
     padding: rem(24);
     border: 1px solid $green;
     margin-top: rem(16);
+    display: block;
 
     @include mq(md) {
         display: flex;

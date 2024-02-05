@@ -37,6 +37,10 @@
 }
 
 .sub-voice__contents {
+    display: none;
+}
+
+.sub-voice__contents.is-active {
     margin-top: rem(40);
     display: grid;
         grid-template-columns: 1fr;

@@ -97,6 +97,7 @@
 */
 
 .sub-campaign__contents {
+    display: none;
     padding-right: rem(33);
     padding-left: rem(33);
     max-width: rem(600);
@@ -108,6 +109,10 @@
         padding-left: 0;
         max-width: 100%;
     }
+}
+
+.sub-campaign__contents.is-active {
+    display: block;
 }
 
 .sub-campaign__cards {

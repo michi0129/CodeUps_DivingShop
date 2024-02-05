@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 1fr;
     gap: rem(16) rem(21);
     @include mq(md) {
-        grid-template-columns: repeat(auto-fit, 162px);
+        grid-template-columns: repeat(auto-fit, rem(162));
         gap: rem(32);
     }
 }
@@ -19,7 +19,7 @@
     background-color: $white;
 }
 
-.tabs__tab.current{
+.tabs__tab.is-active{
     display: flex;
     align-items: center;
     justify-content: center;

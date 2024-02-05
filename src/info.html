@@ -112,9 +112,9 @@
               <a href="./campaign.html" class="sp-navi__title"><img src="./assets/images/common/starfish.png"
                   alt="ヒトデ">キャンペーン</a>
               <ul class="sp-navi__item">
-                <li><a href="./campaign-license.html">ライセンス取得</a></li>
-                <li><a href="./campaign-trial.html">貸切体験ダイビング</a></li>
-                <li><a href="./campaign-fun.html">ナイトダイビング</a></li>
+                <li><a href="./campaign.html#tab02">ライセンス取得</a></li>
+                <li><a href="./campaign.html#tab03">貸切体験ダイビング</a></li>
+                <li><a href="./campaign.html#tab04">ナイトダイビング</a></li>
               </ul>
             </li>
             <li class="sp-navi__items">
@@ -125,9 +125,9 @@
               <a href="./info.html" class="sp-navi__title"><img src="./assets/images/common/starfish.png"
                   alt="ヒトデ">ダイビング情報</a>
               <ul class="sp-navi__item">
-                <li><a href="./info.html">ライセンス講習</a></li>
-                <li><a href="./info-trial.html">体験ダイビング</a></li>
-                <li><a href="./info-fun.html">ファンダイビング</a></li>
+                <li><a href="./info.html#tab01">ライセンス講習</a></li>
+                <li><a href="./info.html#tab03">体験ダイビング</a></li>
+                <li><a href="./info.html#tab02">ファンダイビング</a></li>
               </ul>
             </li>
             <li class="sp-navi__items">
@@ -203,13 +203,13 @@
     <!-- Info -->
     <section class="sub-info lower-info">
       <div class="sub-info__inner inner">
-          <ul class="sub-info__tabs">
-            <li class="sub-info__tab sub-info__tab-license current">ライセンス<br class="u-mobile">講習</li>
-            <li class="sub-info__tab sub-info__tab-fun"><a href="./info-fun.html">ファン<br class="u-mobile">ダイビング</a></li>
-            <li class="sub-info__tab  sub-info__tab-trial"><a href="./info-trial.html">体験<br class="u-mobile">ダイビング</a></li>
-          </ul>
+          <div class="sub-info__tabs">
+            <button id="tab01" class="sub-info__tab sub-info__tab-license js-tab-button is-active">ライセンス<br class="u-mobile">講習</button>
+            <button id="tab02" class="sub-info__tab sub-info__tab-fun js-tab-button">ファン<br class="u-mobile">ダイビング</button>
+            <button id="tab03" class="sub-info__tab sub-info__tab-trial js-tab-button">体験<br class="u-mobile">ダイビング</button>
+          </div>
 
-          <div class="sub-info__tab-content sub-info__tab-content-license">
+          <div class="sub-info__tab-content sub-info__tab-content-license js-tab-content is-active">
             <div class="sub-info__tab-content-description">
               <h2 class="sub-info__tab-content-title">ライセンス講習</h2>
               <p class="sub-info__tab-content-text">
@@ -218,6 +218,28 @@
             </div>
             <div class="sub-info__tab-content-img">
               <img src="./assets/images/common/info-license.jpg" alt="魚の群れの画像">
+            </div>
+          </div>
+
+          <div class="sub-info__tab-content sub-info__tab-content-fun js-tab-content">
+            <div class="sub-info__tab-content-description">
+              <h2 class="sub-info__tab-content-title">ファンダイビング</h2>
+              <p class="sub-info__tab-content-text">
+                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
+            </div>
+            <div class="sub-info__tab-content-img">
+              <img src="./assets/images/common/info-fun.jpg" alt="魚の群れの画像">
+            </div>
+          </div>
+
+          <div class="sub-info__tab-content sub-info__tab-content-trial js-tab-content" >
+            <div class="sub-info__tab-content-description">
+              <h2 class="sub-info__tab-content-title">体験ダイビング</h2>
+              <p class="sub-info__tab-content-text">
+                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
+            </div>
+            <div class="sub-info__tab-content-img">
+              <img src="./assets/images/common/info-trial.jpg" alt="魚の群れの画像">
             </div>
           </div>
 
@@ -291,9 +313,9 @@
                 <a href="./campaign.html" class="footer-navi__title"><img src="./assets/images/common/starfish.png"
                     alt="ヒトデ">キャンペーン</a>
                 <ul class="footer-navi__item">
-                  <li><a href="./campaign-license.html">ライセンス取得</a></li>
-                  <li><a href="./campaign-trial.html">貸切体験ダイビング</a></li>
-                  <li><a href="./campaign-fun.html">ナイトダイビング</a></li>
+                  <li><a href="./campaign.html#tab02">ライセンス取得</a></li>
+                  <li><a href="./campaign.html#tab03">貸切体験ダイビング</a></li>
+                  <li><a href="./campaign.html#tab04">ナイトダイビング</a></li>
                 </ul>
               </li>
               <li class="footer-navi__items footer-navi__items--width">
@@ -307,9 +329,9 @@
                 <a href="./info.html" class="footer-navi__title"><img src="./assets/images/common/starfish.png"
                     alt="ヒトデ">ダイビング情報</a>
                 <ul class="footer-navi__item">
-                  <li><a href="./info.html">ライセンス講習</a></li>
-                  <li><a href="./info-trial.html">体験ダイビング</a></li>
-                  <li><a href="./info-fun.html">ファンダイビング</a></li>
+                  <li><a href="./info.html#tab-panel1">ライセンス講習</a></li>
+                  <li><a href="./info.html#tab-panel2">体験ダイビング</a></li>
+                  <li><a href="./info.html#tab-panel3">ファンダイビング</a></li>
                 </ul>
               </li>
               <li class="footer-navi__items">

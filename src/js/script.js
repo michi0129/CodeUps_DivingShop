@@ -1,7 +1,7 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
-    //ハンバーガーメニュー
+    //　ハンバーガーメニュー //
     //クリックするとクラスを付与
     $(".js-hamburger").click(function () {
         if ($('.js-hamburger').hasClass('is-active')) {
@@ -17,7 +17,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     });
 
-    // Initialize Swiper
+    // Swiper //
+    // Topページ
     var swiper = new Swiper(".js-mv-swiper", {
         //pagination: {
         //    el: ".swiper-pagination",
@@ -32,7 +33,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         },
     });
 
-    // Swiper
+    // Campaignページ
     var swiper = new Swiper(".js-campaign-swiper", {
         //pagination: {
         //    el: ".swiper-pagination",
@@ -66,8 +67,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 });
 
-
-//informationの画像エフェクト
+// 画像エフェクト //
+//　infoページ
 //要素の取得とスピードの設定
 var box = $('.info__image'),
     speed = 700;
@@ -94,8 +95,8 @@ box.each(function () {
     });
 });
 
-//Voiceの画像エフェクト
-//要素の取得とスピードの設定
+//　Voiceページ
+//　要素の取得とスピードの設定
 var box = $('.voice-card__image'),
     speed = 700;
 
@@ -121,7 +122,7 @@ box.each(function () {
     });
 });
 
-//Priceの画像エフェクト
+//　Priceページ
 //要素の取得とスピードの設定
 var box = $('.price__image'),
     speed = 700;
@@ -151,7 +152,7 @@ box.each(function () {
 var topBtn = $('.to-top');
 topBtn.hide();
 
-// ボタンの表示設定
+// To Topボタン表示設定
 $(window).scroll(function () {
     if ($(this).scrollTop() > 70) {
         // 指定px以上のスクロールでボタンを表示
@@ -162,25 +163,27 @@ $(window).scroll(function () {
     }
 });
 
+
+// モーダル //
 // Aboutページ
-// モーダル
-$(document).ready(function() {
+$(document).ready(function () {
     if ($(".js-gallery").length) {
         $(".js-gallery").modaal({
             type: 'image',
             overlay_close: true, // モーダル背景クリック時に閉じるか
-            before_open: function() { // モーダルが開く前に行う動作
+            before_open: function () { // モーダルが開く前に行う動作
                 $('html').css('overflow-y', 'hidden'); // 縦スクロールバーを出さない
             },
-            after_close: function() { // モーダルが閉じた後に行う動作
+            after_close: function () { // モーダルが閉じた後に行う動作
                 $('html').css('overflow-y', 'scroll'); // 縦スクロールバーを出す
             }
         });
     }
 });
 
+
+// アコーディオン //
 // Blogページ
-// アコーディオン
 $(function () {
     // タイトルをクリックすると
     $(".js-archive-accordion").on("click", function () {
@@ -196,7 +199,6 @@ $(function () {
 });
 
 // FAQページ
-// アコーディオン
 $(function () {
     // タイトルをクリックすると
     $(".js-accordion").on("click", function () {
@@ -205,68 +207,120 @@ $(function () {
         // クリックしたタイトル以外のコンテンツを閉じる
         // $(".js-accordion").not(this).next().slideUp(300);
         // クリックしたタイトルにopenクラスを付け外しして＋と－を切り替える
-        $(this).toggleClass("is-open");
+        $(this).toggleClass("is-close");
         // クリックしたタイトルの次の要素(コンテンツ)を開閉
         $(this).next().slideToggle(300);
     });
 });
 
-//Contactページ
-$(document).ready(function () {
-    $('.js-form :input:not(:checkbox)').click(function (event) { 
 
-        event.preventDefault(); // フォームのチェックボックス以外の要素に対するデフォルトの送信動作を無効化
+// タブ切り替え //　
+function activateTab() {
+    var tabButtons = $(".js-tab-button");
+    var tabContents = $(".js-tab-content");
+    tabButtons.click(function () {
+        var index = tabButtons.index(this);  //ボタンと同じ順番のコンテンツを取得する
+        tabButtons.removeClass("is-active");
+        tabContents.removeClass("is-active");
+        $(this).addClass("is-active");
+        tabContents.eq(index).addClass("is-active");
+    });
+}
+activateTab();
 
-        // 必須項目の入力をチェック
-        var name = $('.js-name').val();
-        var email = $('.js-email').val();
-        var tel = $('.js-tel').val();
-        var textarea = $('.js-textarea').val();
 
-        // チェックボックスの選択状態を取得
-        var checkboxSelected = $('[name="hoge"]:checked').length > 0;
+// タブダイレクトリンク //
+function activateTabFromHash() {
+    var hash = location.hash;
+    hash = (hash.match(/^#tab\d+$/) || [])[0];
+    var tabName = "tab01";
+    if ($(hash).length) {
+        tabName = hash.slice(1);
+    }
+    var tabButtons = $(".js-tab-button");
+    var tabContents = $(".js-tab-content");
+    tabButtons.removeClass("is-active");
+    tabContents.removeClass("is-active");
+    var tabNumber = tabButtons.filter("#" + tabName).index();
+    tabButtons.eq(tabNumber).addClass("is-active");
+    tabContents.eq(tabNumber).addClass("is-active");
+}
+activateTabFromHash();
 
-        // 本番環境では非表示
-        // console.log("名前:", name); // 名前をコンソールに出力
-        // console.log("メールアドレス:", email); // メールアドレスをコンソールに出力
-        // console.log("電話番号:", tel); // 電話番号をコンソールに出力
-        // console.log("お問い合わせ内容:", textarea); // お問い合わせ内容をコンソールに出力
 
-        // エラーメッセージの表示とフォーカスの設定
-        var hasError = false;
-        $('.js-form :input[required]').each(function() {
-            if ($(this).val() === '') {
-                $(this).addClass('is-active');
-                hasError = true; // エラーがある場合はフラグを立てる
-            } else {
-                $(this).removeClass('is-active');
+// フォームチェック //
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.querySelector('.js-form');
+    var submitButton = document.querySelector('.sub-form__button input[type="submit"]');
+
+    submitButton.addEventListener('click', function (event) {
+        var nameInput = document.querySelector('.js-name');
+        var emailInput = document.querySelector('.js-email');
+        var telInput = document.querySelector('.js-tel');
+        var checkboxInputs = document.querySelectorAll('.sub-form__checkbox input');
+        var textareaInput = document.querySelector('.js-textarea');
+        var privacyCheckbox = document.querySelector('.sub-form__privacy input');
+
+        var isValid = true;
+
+        // バリデーションルール
+        if (nameInput.value.trim() === '') {
+            isValid = false;
+            nameInput.classList.add('is-active');
+        } else {
+            nameInput.classList.remove('is-active');
+        }
+
+        if (emailInput.value.trim() === '') {
+            isValid = false;
+            emailInput.classList.add('is-active');
+        } else {
+            emailInput.classList.remove('is-active');
+        }
+
+        if (telInput.value.trim() === '') {
+            isValid = false;
+            telInput.classList.add('is-active');
+        } else {
+            telInput.classList.remove('is-active');
+        }
+
+        var checkedCheckboxCount = 0;
+        checkboxInputs.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                checkedCheckboxCount++;
             }
         });
 
-        if (!checkboxSelected) {
-                        // チェックボックスが一つも選択されていない場合のエラー処理
-                        $('[type="checkbox"]').addClass('is-active'); // チェックボックスエラーメッセージを表示
-                        hasError = true;
-                    } else {
-                        $('[type="checkbox"]').removeClass('is-active'); // チェックボックスエラーメッセージを非表示
-                    }
-
-        if (hasError) {
-            // エラーがある場合、最初のエラー項目にフォーカスを設定する
-            $('.js-form :input[required].is-active').first().focus();
-            $('.sub-form__error').addClass('is-active'); // エラーメッセージを表示
-            return false; // エラーがあるためフォームの送信をキャンセル
+        if (checkedCheckboxCount === 0) {
+            isValid = false;
+            checkboxInputs.forEach(function (checkbox) {
+                checkbox.classList.add('is-active');
+            });
         } else {
-            $('.sub-form__error').removeClass('is-active'); // エラーメッセージを非表示
+            checkboxInputs.forEach(function (checkbox) {
+                checkbox.classList.remove('is-active');
+            });
         }
 
-        // エラーがない場合はフォームの送信を行う（ここに送信処理を記述）
-    });
+        if (textareaInput.value.trim() === '') {
+            isValid = false;
+            textareaInput.classList.add('is-active');
+        } else {
+            textareaInput.classList.remove('is-active');
+        }
 
+        if (!privacyCheckbox.checked) {
+            isValid = false;
+            privacyCheckbox.classList.add('is-active');
+        } else {
+            privacyCheckbox.classList.remove('is-active');
+        }
 
-
-    // フォームのsubmit以外のイベント（クリックなど）でフォーカスされた場合、is-activeを削除する
-    $('.js-form :input[required]').focus(function() {
-        $(this).removeClass('is-active');
+        // バリデーション結果
+        if (!isValid) {
+            event.preventDefault();
+            alert('全ての必須項目を入力・選択してください。');
+        }
     });
 });

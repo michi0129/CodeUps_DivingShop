@@ -25,20 +25,28 @@
 }
 
 .gallery__item {
+    aspect-ratio: 580 / 369;
+    overflow: hidden;
     @include mq(md) {
     grid-column: span 13;
     grid-row: span 1;
+    
     }
 }
 
 .gallery__item:nth-of-type(6n + 1) { /*1番目と6の倍数+1*/
+    aspect-ratio: 492 / 746;
+    overflow: hidden;
     @include mq(md) {
         grid-column: span 11;
         grid-row: span 2;
+
 }
 }
 
 .gallery__item:nth-of-type(6n + 6) { /*6番目と6の倍数+6*/
+    aspect-ratio: 492 / 746;
+    overflow: hidden;
     @include mq(md) {
         grid-column: span 11;
         grid-row: span 2;
